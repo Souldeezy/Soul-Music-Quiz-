@@ -1,0 +1,268 @@
+.banner-categories {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  padding: 40px 100px;
+  background: linear-gradient(
+    180deg,
+    #ff44007c 0%,
+    #ff44006f 10%,
+    #ff440067 100%
+  );
+  background-color: rgba(0, 0, 0, 0.649);
+  background-blend-mode: darken;
+  border-top: 2px solid rgba(255, 69, 0, 0.29);
+  border-bottom: 2px solid rgba(255, 69, 0, 0.29);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.banner-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 40px 100px;
+  background: linear-gradient(
+    180deg,
+    #ff44007c 0%,
+    #ff44006f 10%,
+    #ff440067 100%
+  );
+  background-color: rgba(0, 0, 0, 0.822);
+  background-blend-mode: darken;
+  border-top: 2px solid #ff45004a;
+  border-bottom: 2px solid rgba(255, 69, 0, 0.29);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.banner-categories h2,
+.banner-legal h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #ff4500;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(25px);
+  z-index: 3;
+}
+.banner-legal h2 {
+  margin-right: 33px;
+}
+.banner-beale-none {
+  opacity: 0;
+}
+.banner-legal.is-visible .banner-beale-none  {
+  animation-name: fade-left;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards; 
+  animation-delay: 17s; 
+}
+.banner-beale-none i:nth-child(1) {
+  animation-delay: 16.3s;
+}
+.banner-beale-none i:nth-child(2) {
+  animation-delay: 16.7s;
+}
+.banner-beale-none i:nth-child(3) {
+  animation-delay: 17.1s;
+}
+@keyframes fade-left {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.effet-beale-street {
+  opacity: 0.15;
+  transform: scale(8);
+  background: url("/svg/quiz/memphis/banner-bottom-beale-street/beale-street.webp") center / contain no-repeat;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  left: 25%;
+  top: -10%;
+  z-index: 2;
+  transition: transform 0s, filter 0s;
+  filter: blur(0px);
+}
+.banner-legal.is-visible .effet-beale-street {
+  transform: scale(6.5);
+  transition-duration: 10s , 10s; 
+  transition-timing-function: ease-out, ease-out; 
+  filter: blur(1px);
+}
+.beale-street-sign .letter {
+  position: absolute;
+  z-index: 5;
+  font-family: var(--font-alfa), sans-serif; 
+  font-size: 51px; 
+  background: linear-gradient(45deg, rgba(255, 68, 0, 0.536), rgb(104, 28, 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.47);
+}
+.letter-b  { top: 32%; left: 29.5%; transform: rotateZ(-15deg); font-size: 50px; } 
+.letter-e3 { top: 24%; left: 32.2%; transform: rotateZ(-11deg); font-size: 50px; } 
+.letter-a  { top: 17.8%; left: 34.9%; transform: rotateZ(-8deg); font-size: 52px; } 
+.letter-l  { top: 13%; left: 37.8%; transform: rotateZ(-6deg); font-size: 49px; } 
+.letter-e4 { top: 10.7%; left: 40.5%; transform: rotateZ(-1deg); font-size: 50px;} 
+.letter-s  { top: 9.7%; left: 44.5%; font-size: 50px; transform: rotateZ(2deg) ;} 
+.letter-t1 { top: 11%; left: 47.2%; transform: rotateZ(3deg) } 
+.letter-r  { top: 13.6%; left: 50.0%;transform: rotateZ(7deg) } 
+.letter-e1 { top: 20%; left: 53.0%;transform: rotateZ(10deg) } 
+.letter-e2 { top: 27%; left: 56.0%; transform: rotateZ(13deg)} 
+.letter-t2 { top: 35.5%; left: 58.7%;transform: rotateZ(16deg) } 
+.banner-legal.is-visible .beale-street-sign .letter {
+  animation-fill-mode: forwards; 
+  animation-timing-function: ease-in-out; 
+}
+.banner-legal.is-visible .letter-b,
+.banner-legal.is-visible .letter-e3,
+.banner-legal.is-visible .letter-a,
+.banner-legal.is-visible .letter-l,
+.banner-legal.is-visible .letter-e4 {
+  animation-name: instant-on, straighten-up, move-up, slide-and-shrink;
+  animation-duration: 0.1s, 1s, 1s, 3.5s; 
+  animation-delay: 10s, 13.5s, 14.6s, 15.7s; 
+}
+.banner-legal.is-visible .letter-s,
+.banner-legal.is-visible .letter-t1,
+.banner-legal.is-visible .letter-r,
+.banner-legal.is-visible .letter-e1,
+.banner-legal.is-visible .letter-e2,
+.banner-legal.is-visible .letter-t2 {
+  animation-name: neon-flicker, straighten-up, move-up, slide-and-shrink;
+  animation-duration: 1.5s, 1s, 1s, 3.5s; 
+}
+.banner-legal.is-visible .letter-s  { animation-delay: 10.7s, 13.5s, 14.6s, 15.7s; }
+.banner-legal.is-visible .letter-t1 { animation-delay: 11.2s, 13.5s, 14.6s, 15.7s; }
+.banner-legal.is-visible .letter-r  { animation-delay: 10.4s, 13.5s, 14.6s, 15.7s; }
+.banner-legal.is-visible .letter-e1 { animation-delay: 11.5s, 13.5s, 14.6s, 15.7s; }
+.banner-legal.is-visible .letter-e2 { animation-delay: 11.0s, 13.5s, 14.6s, 15.7s; }
+.banner-legal.is-visible .letter-t2 { animation-delay: 10.2s, 13.5s, 14.6s, 15.7s; }
+@keyframes instant-on {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes neon-flicker {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  25%  { opacity: 0.3; }
+  30%  { opacity: 1; }
+  60%  { opacity: 1; }
+  65%  { opacity: 0.7; }
+  70%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+@keyframes straighten-up {
+  to { transform: rotateZ(0deg); }
+}
+@keyframes move-up {
+  to { top: 23%; }
+}
+@keyframes slide-and-shrink {
+  to {
+    transform: translateX(1400px) scale(0.1);
+    opacity: 0;
+  }
+}
+.effet-mississipi-studio {
+  opacity: 0.15;
+  transform: scale(4);
+  background: url("/svg/quiz/memphis/banner-top-mississippi-duck/mississippi-studio.webp") center / contain no-repeat;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 25%;
+  top: 10%;
+  z-index: 2;
+  filter: blur(3px);
+  transition: filter 0s, transform 0s;
+}
+.banner-legal.is-visible .effet-mississipi-studio {
+  filter: blur(0px);
+  transform: scale(8);
+  transition-duration: 3s, 10s; 
+  transition-timing-function: ease-out, ease-out; 
+}
+.effet-duck {
+  opacity: 0.5;
+  background: url("/svg/quiz/memphis/banner-top-mississippi-duck/mississippi-duck.svg") center / contain no-repeat;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  z-index: 3;
+  left: -20%;
+  filter: blur(2px);
+}
+.effet-duck-1 { transform: scale(0.2); top: 15%; left: -23%; z-index: 4; }
+.effet-duck-2 { transform: scale(0.18); top: 25%; left: -28%; }
+.effet-duck-3 { transform: scale(0.08); top: 25%; left: -32%; }
+.effet-duck-4 { transform: scale(0.08); top: 21%; left: -38%; }
+.effet-duck-5 { transform: scale(0.08); top: 25%; left: -36%; }
+.banner-legal.is-visible .effet-duck {
+  animation-name: duck-crossing;
+  animation-duration: 80s; 
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; 
+}
+.banner-legal.is-visible .effet-duck-1 { animation-delay: 10.0s; }
+.banner-legal.is-visible .effet-duck-2 { animation-delay: 10.4s; }
+.banner-legal.is-visible .effet-duck-3 { animation-delay: 10.8s; }
+.banner-legal.is-visible .effet-duck-4 { animation-delay: 10.9s; }
+.banner-legal.is-visible .effet-duck-5 { animation-delay: 10.85s; }
+@keyframes duck-crossing {
+  from {
+  }
+  to {
+    left: 110%; 
+  }
+}
+.banner-categories h2.play,
+.banner-legal h2.play {
+  animation: follow-car-smooth 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.banner-bar {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.banner-bar i {
+  font-size: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  will-change: transform, opacity;
+}
+.banner-bar.play i {
+  animation: fade-left 1.5s ease forwards;
+}
+.banner-bar.play i:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.banner-bar.play i:nth-child(2) {
+  animation-delay: 1.1s;
+}
+.banner-bar.play i:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.section-banner :global(.fa-rss) {
+  color: #ff440093;
+}
+.section-banner :global(.fa-record-vinyl) {
+  color: #ff440093;
+}
+.section-banner :global(.fa-music) {
+  color: #ff440093;
+}
+
+@keyframes follow-car-smooth { 0% { transform: translateX(-260px); opacity: 0; } 85% { transform: translateX(10px); } 100% { transform: translateX(0); opacity: 1; } }

@@ -1,0 +1,17 @@
+/* Identity only: all geometry/responsive rules come from the validated template. */
+.hero.hero {
+  background-image: url("/images/quiz/chicago/hero-chicago.webp");
+}
+.cta:global(.next-step-section):global(.california-soul-cta) {
+  background-image: url("/images/quiz/chicago/hero-chicago.webp");
+  background-position: bottom;
+}
+
+/* Hide the unneeded level illustrations at the mobile widths, including 768px. */
+@media (max-width: 768px) {
+  .levelArtPicture.levelArtPicture { display: none; }
+}
+
+@media (width: 1024px) and (height: 768px) {
+  .quizSection .levelArtTeen { transform: scale(1.4); }
+}

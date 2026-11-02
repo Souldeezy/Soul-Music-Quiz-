@@ -1,0 +1,698 @@
+/* DARTS GAME BLUEPRINT............................................................................................... */
+
+#blueprint-darts {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+}
+
+/* DARTS SCOREBOARD................................................................................................... */
+
+.coney-darts-scoreboard {
+  position: absolute;
+  top: 0;
+  left: 22%;
+  width: 200px;
+  height: 100%;
+  background: rgb(2, 2, 2);
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+  opacity: 0;
+}
+
+.darts-score-title {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: gold;
+  text-transform: uppercase;
+}
+
+.darts-score-row {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.darts-score-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.darts-score-label {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.darts-score-detail {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-left: 5px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+
+.darts-score-value {
+  width: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 8px;
+  color: rgb(0, 249, 166);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.darts-score-x {
+  width: 14px;
+  min-width: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  margin-right: 3px;
+}
+
+/* DARTS GAME AREA.................................................................................................... */
+
+.coney-darts-game {
+  position: absolute;
+  left: 35.05%;
+  top: 0;
+  width: 790px;
+  height: 80.5%;
+  border-bottom: 1px solid orangered;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.245);
+  z-index: 0;
+  opacity: 0;
+}
+
+/* DARTBOARD.......................................................................................................... */
+
+.game-image {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.darts-image {
+  background-image: url("/svg/legal/banner-bottom-nyc-games/coney/darts-game/darts-game-board.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* DARTS OVERLAY...................................................................................................... */
+
+#darts-overlay {
+  position: absolute;
+  left: 50%;
+  top: 49.5%;
+  transform: translate(-50%, -50%);
+  width: 113px;
+  height: 113px;
+  border-radius: 50%;
+  cursor: crosshair;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#darts-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* DARTS GAUGE........................................................................................................ */
+
+#darts-gauge-container {
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 30%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  margin-top: 42px;
+  z-index: 200;
+}
+
+#darts-gauge-container.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#darts-gauge {
+  position: relative;
+  width: 22px;
+  height: 140px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+#darts-gauge-red-top {
+  background: #ff2222;
+  width: 100%;
+}
+
+#darts-gauge-orange-top {
+  background: rgb(255, 200, 0);
+  width: 100%;
+}
+
+#darts-gauge-green {
+  background: rgb(0, 249, 166);
+  width: 100%;
+}
+
+#darts-gauge-orange-bottom {
+  background: rgb(255, 200, 0);
+  width: 100%;
+}
+
+#darts-gauge-red-bottom {
+  background: #ff2222;
+  width: 100%;
+}
+
+#darts-cursor {
+  position: absolute;
+  left: -3px;
+  width: 28px;
+  height: 4px;
+  background: black;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  transition: top 0.05s linear;
+}
+
+#darts-gauge-label {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* DARTS ACTIONS...................................................................................................... */
+
+.coney-darts-actions {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* DARTS LIVE STATS................................................................................................... */
+
+.darts-live-stats {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.darts-live-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.darts-live-label {
+  width: 70px;
+  min-width: 70px;
+  max-width: 70px;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.darts-live-value {
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 10px;
+  color: rgb(0, 249, 166);
+  text-align: right;
+  letter-spacing: 2px;
+  padding-right: 5px;
+}
+
+#timer-value {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  color: white;
+}
+
+/* DARTS ACTION BUTTON................................................................................................ */
+
+.darts-action-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 transparent;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.darts-action-btn:hover {
+  color: rgb(0, 249, 166);
+  box-shadow: 0 0 3px 0 orangered inset;
+}
+
+/* DARTS NOTIFICATIONS................................................................................................ */
+
+.coney-darts-notifications {
+  position: absolute;
+  left: 35.05%;
+  bottom: 0;
+  width: 790px;
+  height: 19.5%;
+  background: rgba(41, 41, 41, 0.151);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 0;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* DARTS WIN.......................................................................................................... */
+
+#darts-win-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-poiret), sans-serif;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 300;
+  width: 400px;
+}
+
+#darts-win-message.show {
+  opacity: 1;
+}
+
+.win-title {
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 0 0 20px white;
+  margin-bottom: 12px;
+  -webkit-text-stroke: 1px white;
+  opacity: 0;
+}
+
+.win-title.show {
+  animation:
+    winTitleFade 1.5s forwards,
+    winBlink 1.2s infinite;
+}
+
+.win-stats {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+
+.win-row {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  padding-left: 135px;
+  align-items: center;
+}
+
+.win-label {
+  color: white;
+  width: 75px;
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.win-label.show {
+  animation: winLabelSlide 0.6s forwards;
+}
+
+.win-value {
+  color: rgb(0, 249, 166);
+  font-size: 11px;
+  font-family: var(--font-rock), sans-serif;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+
+.win-value.show {
+  animation: winValueFade 0.6s forwards;
+}
+
+#win-time,
+#win-turns {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  color: white;
+}
+
+#win-row-record {
+  width: 500px;
+}
+
+#win-record {
+  font-family: var(--font-rock), sans-serif;
+  font-size: 9px;
+  color: orangered;
+  margin-left: 8px;
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+#win-record.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s ease;
+}
+
+#win-record.blink {
+  animation: winBlink 2.5s infinite;
+}
+
+/* DARTS NEW GAME..................................................................................................... */
+
+.darts-action-btn.blink {
+  color: rgb(0, 249, 166);
+  box-shadow: 0 0 3px 0 orangered inset;
+  animation: dartsNewGameBlink 2s infinite;
+}
+
+/* POPUP CLICK........................................................................................................ */
+
+#darts-click-popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 17px;
+  color: white;
+  text-shadow: 0 0 20px white;
+  letter-spacing: 3px;
+  z-index: 100000;
+  pointer-events: none;
+  display: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px white inset;
+}
+
+#darts-click-popup.visible {
+  display: block;
+  animation: blink-popup 1.7s infinite alternate;
+}
+
+/* DARTS NOTIFICATION SCORE........................................................................................... */
+
+.darts-notif-score {
+  color: white;
+  font-weight: bold;
+}
+
+.darts-notif-separator {
+  display: inline-block;
+  width: 10px;
+}
+
+.darts-notif-result {
+  color: rgb(0, 249, 166);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.darts-notif-negative {
+  color: orangered;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.darts-notif-normal {
+  text-transform: none;
+}
+
+.darts-notif-smq {
+  color: white;
+  font-weight: bold;
+}
+
+.darts-notif-price {
+  color: orangered;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* DARTS WIN NOTIFICATION............................................................................................. */
+
+.darts-notif-win-label {
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-weight: normal;
+}
+
+.darts-notif-win-player {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.darts-notif-win-separator {
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  margin: 0 12px;
+}
+
+.darts-notif-win-time {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-poiret), sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.darts-notif-record {
+  display: inline-block;
+  margin-left: 28px;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  color: orangered;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateX(35px);
+  animation:
+    dartsNotifRecordSlide 0.8s ease 0.4s forwards,
+    dartsNotifRecordBlink 5s ease-in-out 2.2s infinite;
+}
+
+/* KEYFRAMES.......................................................................................................... */
+
+@keyframes dartsSlideInLeft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dartsSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% + 80px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes dartsSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dartsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dartsLabelFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dartsScoreSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dartsButtonFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dartsNewGameBlink {
+  0%,
+  100% {
+    color: white;
+    box-shadow: 0 0 3px 0 transparent inset;
+  }
+  50% {
+    color: rgb(0, 249, 166);
+    box-shadow: 0 0 3px 0 orangered inset;
+  }
+}
+
+@keyframes dartsNotifRecordSlide {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dartsNotifRecordBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

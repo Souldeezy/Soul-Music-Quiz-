@@ -1,0 +1,284 @@
+.home-about { display: flex; width: 100%; justify-content: center; padding: 150px max(6vw, 80px); background: rgba(0, 0, 0, .45) url("/svg/common/effet-vinyl.svg") center / 5%; background-blend-mode: darken; background-attachment: fixed; scroll-margin-top: 100px; }
+.home-about-carousel { position: relative; display: flex; width: min(100%, 1400px); height: 380px; align-items: center; justify-content: center; padding: 50px 200px 65px; border: 2px solid orangered; border-radius: 15px; background: rgba(0, 0, 0, .75); box-shadow: 0 0 15px orangered; }
+.home-about-slide { width: 100%; color: #fff; font-size: 18px; line-height: 1.8; letter-spacing: 2px; text-align: justify; }
+.home-about-slides { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; width: 100%; min-width: 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; cursor: grab; }
+.home-about-slides::-webkit-scrollbar { display: none; }
+.home-about-slides.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.home-about-slide { align-self: center; min-width: 0; scroll-snap-align: start; }
+.home-about-slide[aria-hidden="true"] { pointer-events: none; }
+.home-about-slide p { margin: 0; }
+.home-about-slide strong { color: orangered; }
+.home-about-slide em { font-weight: 700; }
+.home-about-slide a { color: #347cff; font-weight: 700; overflow-wrap: anywhere; }
+.home-about-slide a:hover, .home-about-slide a:focus-visible { color: rgb(0, 249, 166); text-decoration: underline; text-underline-offset: 3px; }
+.home-about-arrow { position: absolute; top: 50%; display: flex; flex-direction: column; align-items: center; padding: 18px 36px; border: 0; color: orangered; background: transparent; font: inherit; font-size: 40px; cursor: pointer; transform: translateY(-50%); }
+.home-about-arrow.prev { left: 20px; }.home-about-arrow.next { right: 20px; }
+.home-about-arrow span { margin-top: 6px; color: #fff; font-size: 11px; font-weight: 400; font-style: italic; letter-spacing: .5px; }
+.home-about-arrow:hover span { color: orangered; }
+.home-about-dots { position: absolute; bottom: 24px; left: 50%; display: flex; gap: 12px; transform: translateX(-50%); }
+.home-about-dots button { width: 12px; height: 12px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .4); cursor: pointer; }
+.home-about-dots button.is-active { background: orangered; }
+.home-about-arrow:focus-visible { outline: none; color: #fff; text-shadow: 0 0 8px orangered; }
+.home-about-dots button:focus-visible { outline: 2px solid rgb(0, 249, 166); outline-offset: 3px; }
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-about { padding: clamp(85px, 10vw, 130px) clamp(28px, 6vw, 80px); }
+  .home-about-carousel { height: 420px; padding: 48px clamp(100px, 13vw, 170px) 68px; }
+  .home-about-slide { font-size: clamp(16px, 1.6vw, 18px); line-height: 1.7; letter-spacing: 1.5px; }
+  .home-about-arrow { padding-inline: 24px; }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .home-about-slide {
+    align-self: flex-start;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-about { padding: 70px clamp(14px, 5vw, 30px); background-size: 12%; background-attachment: scroll; }
+  .home-about-carousel { height: 610px; padding: 40px clamp(38px, 12vw, 68px) 75px; border-width: 1px; border-radius: 10px; }
+  .home-about-slide { font-size: clamp(14px, 4.25vw, 17px); line-height: 1.6; letter-spacing: .8px; text-align: left; hyphens: none; overflow-wrap: break-word; }
+  .home-about-arrow { padding: 14px 8px; font-size: 34px; }
+  .home-about-arrow.prev { left: 2px; }.home-about-arrow.next { right: 2px; }
+  .home-about-arrow span { font-size: 10px; letter-spacing: 0; writing-mode: vertical-rl; }
+  .home-about-dots { bottom: 28px; }
+}
+
+/* One shared grid row: the longest slide reserves the height at every width. */
+.home-about-carousel { height: auto; min-height: 380px; }
+.home-about-slide { text-align: left; text-wrap: pretty; }
+.home-about-dots { gap: 4px; bottom: 14px; }
+.home-about-dots button { width: 32px; height: 32px; background: transparent; display: grid; place-items: center; }
+.home-about-dots button::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.4); }
+.home-about-dots button.is-active { background: transparent; }
+.home-about-dots button.is-active::after { background: orangered; }
+
+@media (min-width: 1440px) {
+  .home-about-slide { align-self: flex-start; }
+
+  .home-about-dots { gap: 12px; bottom: 24px; }
+  .home-about-dots button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, .4);
+  }
+  .home-about-dots button::after { display: none; }
+  .home-about-dots button.is-active { background: orangered; }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-about { padding-top: 120px; padding-bottom: 120px; }
+  .home-about-carousel {
+    width: min(100%, 1600px);
+    height: 720px;
+    padding: 0 180px;
+    overflow: hidden;
+  }
+  .home-about-slide {
+    padding: 100px 120px 130px;
+    font-size: 28px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+  }
+  .home-about-arrow { padding-inline: 52px; font-size: 64px; }
+  .home-about-arrow span { font-size: 18px; }
+  .home-about-dots { gap: 18px; bottom: 36px; }
+  .home-about-dots button { width: 18px; height: 18px; }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-about { padding-top: 150px; padding-bottom: 150px; }
+  .home-about-carousel { width: min(100%, 2100px); height: 900px; padding: 0 240px; }
+  .home-about-slide { padding: 130px 160px 180px; font-size: 34px; line-height: 1.8; letter-spacing: 2px; }
+  .home-about-arrow { padding-inline: 64px; font-size: 80px; }
+  .home-about-arrow span { font-size: 24px; }
+  .home-about-dots { gap: 18px; bottom: 84px; }
+  .home-about-dots button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    place-items: center;
+    background: transparent;
+  }
+  .home-about-dots button::after {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .4);
+  }
+  .home-about-dots button.is-active { background: transparent; }
+  .home-about-dots button.is-active::after { background: orangered; }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-about-carousel { min-height: 420px; padding: 40px 90px 64px; }
+  .home-about-dots { gap: 0; }
+  .home-about-dots button { width: 26px; }
+  .home-about-slide { font-size: clamp(16px, 1.6vw, 18px); line-height: 1.7; letter-spacing: .6px; }
+  .home-about-arrow { padding-inline: 8px; }
+  .home-about-arrow span { font-size: 10px; font-weight: 400; }
+  .home-about-arrow.prev { left: 8px; }
+  .home-about-arrow.next { right: 8px; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .home-about-slide { align-self: flex-start; }
+}
+
+@media (min-width: 1280px) and (max-width: 1365.98px) {
+  .home-about-carousel { padding-inline: 120px; }
+  .home-about-slide { align-self: flex-start; }
+  .home-about-arrow.prev { left: 20px; }
+  .home-about-arrow.next { right: 20px; }
+}
+
+@media (min-width: 1366px) and (max-width: 1439.98px) {
+  .home-about-carousel { padding-inline: 120px; }
+  .home-about-slide { align-self: flex-start; }
+  .home-about-arrow.prev { left: 20px; }
+  .home-about-arrow.next { right: 20px; }
+}
+
+@media (max-width: 767.98px) {
+  .home-about-carousel { min-height: 0; padding: 84px 38px; }
+  .home-about-slide { padding-inline: 16px; font-size: clamp(16px, 4.3vw, 18px); line-height: 1.8; letter-spacing: .3px; }
+  .home-about-arrow { top: 50%; bottom: auto; transform: translateY(-50%); padding: 4px 2px; min-width: 34px; min-height: 44px; }
+  .home-about-arrow.prev { left: 1px; }
+  .home-about-arrow.next { right: 1px; }
+  .home-about-arrow span { display: none; }
+}
+
+@media (max-width: 375.98px) {
+  .home-about { padding-inline: 24px; }
+  .home-about-dots { gap: 0; }
+  .home-about-dots button { width: 26px; }
+}
+
+@media (max-width: 375.98px) {
+  .home-about-carousel {
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: none;
+  }
+
+  .home-about-slide {
+    font-size: 12px;
+  }
+
+  .home-about-dots button {
+    width: 22px;
+    height: 22px;
+  }
+
+  .home-about-dots button::after {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Un clic souris ne doit pas figer la couleur de survol du libellé. */
+.home-about-arrow:focus span { color: #fff; }
+.home-about-arrow:focus:hover span { color: #fff !important; }
+
+/* Accessibility: enlarge only the invisible desktop touch target. */
+@media (min-width: 1440px) {
+  .home-about-dots button {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+  }
+
+  .home-about-dots button::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .4);
+  }
+
+  .home-about-dots button.is-active { background: transparent; }
+  .home-about-dots button.is-active::after { background: orangered; }
+}
+
+/* Accessibility: keep every carousel dot comfortably clickable. */
+.home-about-dots { gap: 16px; }
+.home-about-dots button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+.home-about-dots button::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .4);
+}
+.home-about-dots button.is-active { background: transparent; }
+.home-about-dots button.is-active::after { background: orangered; }
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-about-dots { gap: 20px; }
+  .home-about-dots button::after { width: 18px; height: 18px; }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-about-dots { gap: 18px; }
+  .home-about-dots button {
+    width: 44px;
+    height: 44px;
+  }
+  .home-about-dots button::after {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile: dots visuellement plus discrets, sans réduire leur zone cliquable. */
+@media (max-width: 375.98px) {
+  .home-about-dots button::after {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Desktop: améliorer le confort de lecture en gardant l'identité visuelle du site. */
+@media (min-width: 1280px) {
+  .home-about {
+    background-color: rgba(0, 0, 0, .68);
+    background-size: 8%;
+  }
+
+  .home-about-carousel {
+    background-color: rgba(0, 0, 0, .92);
+  }
+
+  .home-about-slide {
+    max-width: 72ch;
+    margin-inline: auto;
+    letter-spacing: .8px;
+  }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-about-slide {
+    line-height: 1.7;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-about-slide {
+    line-height: 1.7;
+    letter-spacing: 1.2px;
+  }
+}

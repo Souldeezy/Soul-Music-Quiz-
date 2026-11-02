@@ -1,0 +1,28 @@
+{
+  "name": "nextjs-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --port 3000",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint",
+    "validate:news": "node scripts/validate-news-content.mjs",
+    "validate:artists": "node scripts/validate-artists.mjs",
+    "validate:artists:complete": "node scripts/validate-artists.mjs --complete",
+    "prebuild": "npm run validate:artists"
+  },
+  "dependencies": {
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "typescript": "^5"
+  }
+}

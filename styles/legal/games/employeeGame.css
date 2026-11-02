@@ -1,0 +1,1047 @@
+/* EMPLOYEE GAME..................................................................................................... */
+
+.effet-employee-papers-1,
+.effet-livreur-1 {
+  position: absolute;
+  right: -15%;
+  top: -30%;
+  height: 300px;
+  width: 300px;
+  z-index: 1;
+  filter: blur(2px);
+}
+
+.effet-employee-papers-1 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/worker-paper-boy.webp")
+    center / contain no-repeat;
+  transform: scale(0.9);
+}
+
+.effet-livreur-1 {
+  top: 0%;
+  height: 130px;
+  width: 130px;
+  background: url("/svg/legal/banner-top-employee-game/employee-game/worker-livreur.webp")
+    center / contain no-repeat;
+  transform: scale(0.9) rotateY(180deg);
+}
+
+.effet-bag-livreur-1 {
+  position: absolute;
+  right: 7%;
+  top: 23%;
+  height: 130px;
+  width: 130px;
+  transform: scale(1) rotateZ(15deg);
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-package-connies.png")
+    center / contain no-repeat;
+  filter: blur(2px);
+}
+
+.effet-papier {
+  position: absolute;
+  right: 55%;
+  height: 0.5px;
+  width: 50px;
+  background-color: rgba(238, 238, 238, 0.664);
+  box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.69);
+  z-index: 4;
+  opacity: 0;
+}
+
+/* OBJETS LUNCH — BASE COMMUNE....................................................................................... */
+
+.effet-lunch-bag-1,
+.effet-lunch-bag-2,
+.effet-lunch-bag-3,
+.effet-cafe-1,
+.effet-cafe-2,
+.effet-cafe-3,
+.effet-soda-1,
+.effet-soda-2,
+.effet-soda-3,
+.effet-juice-1,
+.effet-juice-2,
+.effet-juice-3,
+.effet-beer-1,
+.effet-beer-2,
+.effet-beer-3,
+.effet-lunch-chicken-1,
+.effet-lunch-chicken-2,
+.effet-lunch-chicken-3,
+.effet-lunch-shrimp-1,
+.effet-lunch-shrimp-2,
+.effet-lunch-shrimp-3,
+.effet-lunch-mac-1,
+.effet-lunch-mac-2,
+.effet-lunch-mac-3,
+.effet-lunch-dessert-1,
+.effet-lunch-dessert-2,
+.effet-lunch-dessert-3 {
+  position: absolute;
+  opacity: 0;
+  z-index: 9;
+}
+
+.effet-lunch-bag-1,
+.effet-lunch-bag-2,
+.effet-lunch-bag-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-package-connies.png")
+    center / contain no-repeat;
+  left: 35%;
+  bottom: -5%;
+  height: 100px;
+  width: 100px;
+}
+
+.effet-lunch-bag-2 {
+  margin-left: 347px;
+}
+.effet-lunch-bag-3 {
+  margin-left: 700px;
+}
+
+.effet-cafe-1,
+.effet-cafe-2,
+.effet-cafe-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/food-coffee-cup-smq.webp")
+    center / contain no-repeat;
+  left: 39.5%;
+  bottom: 1%;
+  height: 40px;
+  width: 40px;
+}
+
+.effet-cafe-2 {
+  margin-left: 347px;
+}
+.effet-cafe-3 {
+  margin-left: 700px;
+}
+
+.effet-soda-1,
+.effet-soda-2,
+.effet-soda-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-drink-soul.png")
+    center / contain no-repeat;
+  left: 39.5%;
+  bottom: 5%;
+  height: 40px;
+  width: 40px;
+  transform: scale(1.2);
+}
+
+.effet-soda-2 {
+  margin-left: 347px;
+}
+.effet-soda-3 {
+  margin-left: 700px;
+}
+
+.effet-juice-1,
+.effet-juice-2,
+.effet-juice-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-drink-funk.png")
+    center / contain no-repeat;
+  left: 39.5%;
+  bottom: 5%;
+  height: 40px;
+  width: 40px;
+  transform: scale(1.2);
+}
+
+.effet-juice-2 {
+  margin-left: 347px;
+}
+.effet-juice-3 {
+  margin-left: 700px;
+}
+
+.effet-beer-1,
+.effet-beer-2,
+.effet-beer-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-connies-beer.png")
+    center / contain no-repeat;
+  left: 39.5%;
+  bottom: 5%;
+  height: 40px;
+  width: 40px;
+  transform: scale(1.2);
+}
+
+.effet-beer-2 {
+  margin-left: 347px;
+}
+.effet-beer-3 {
+  margin-left: 700px;
+}
+
+.effet-lunch-chicken-1,
+.effet-lunch-chicken-2,
+.effet-lunch-chicken-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/food-fried-chicken.webp")
+    center / contain no-repeat;
+  left: 40.5%;
+  bottom: -12%;
+  height: 100px;
+  width: 100px;
+  transform: scale(0.7);
+  z-index: 10;
+}
+
+.effet-lunch-chicken-2 {
+  margin-left: 347px;
+}
+.effet-lunch-chicken-3 {
+  margin-left: 700px;
+}
+
+.effet-lunch-shrimp-1,
+.effet-lunch-shrimp-2,
+.effet-lunch-shrimp-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/food-shrimp-stew.webp")
+    center / contain no-repeat;
+  left: 40.5%;
+  bottom: -22%;
+  height: 100px;
+  width: 100px;
+  transform: scale(0.6);
+  z-index: 10;
+}
+
+.effet-lunch-shrimp-2 {
+  margin-left: 347px;
+}
+.effet-lunch-shrimp-3 {
+  margin-left: 700px;
+}
+
+.effet-lunch-mac-1,
+.effet-lunch-mac-2,
+.effet-lunch-mac-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/food-mac-n-cheese.webp")
+    center / contain no-repeat;
+  left: 42%;
+  bottom: -5%;
+  height: 55px;
+  width: 55px;
+}
+
+.effet-lunch-mac-2 {
+  margin-left: 347px;
+}
+.effet-lunch-mac-3 {
+  margin-left: 700px;
+}
+
+.effet-lunch-dessert-1,
+.effet-lunch-dessert-2,
+.effet-lunch-dessert-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-pumpkin-cake.png")
+    center / contain no-repeat;
+  left: 42%;
+  bottom: -8%;
+  height: 55px;
+  width: 55px;
+  transform: scale(1.2);
+  z-index: 11;
+}
+
+.effet-lunch-dessert-2 {
+  margin-left: 347px;
+}
+.effet-lunch-dessert-3 {
+  margin-left: 700px;
+}
+
+/* BULLES BD......................................................................................................... */
+
+.effet-bulle-bureau-1,
+.effet-bulle-bureau-2,
+.effet-bulle-bureau-3 {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: url("/svg/legal/banner-top-employee-game/employee-game/employee-bulle-bd.webp")
+    center / contain no-repeat;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.effet-bulle-bureau-1 {
+  right: 54%;
+  top: 0%;
+}
+.effet-bulle-bureau-2 {
+  right: 31%;
+  top: 0%;
+}
+.effet-bulle-bureau-3 {
+  right: 8%;
+  top: 0%;
+}
+
+.symbole-faim-1,
+.symbole-faim-2,
+.symbole-faim-3,
+.symbole-super-1,
+.symbole-super-2,
+.symbole-super-3,
+.symbole-bien-1,
+.symbole-bien-2,
+.symbole-bien-3,
+.symbole-normal-1,
+.symbole-normal-2,
+.symbole-normal-3,
+.symbole-drunk-1,
+.symbole-drunk-2,
+.symbole-drunk-3,
+.symbole-sad-1,
+.symbole-sad-2,
+.symbole-sad-3 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.symbole-faim-1,
+.symbole-faim-2,
+.symbole-faim-3 {
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/maze-game/food-package-connies.png")
+    center / contain no-repeat;
+  width: 35px;
+  height: 35px;
+}
+
+.symbole-super-1,
+.symbole-super-2,
+.symbole-super-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/emoji-happy.webp")
+    center / contain no-repeat;
+}
+
+.symbole-bien-1,
+.symbole-bien-2,
+.symbole-bien-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/emoji-good.webp")
+    center / contain no-repeat;
+}
+
+.symbole-normal-1,
+.symbole-normal-2,
+.symbole-normal-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/emoji-normal.webp")
+    center / contain no-repeat;
+}
+
+.symbole-drunk-1,
+.symbole-drunk-2,
+.symbole-drunk-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/emoji-drunk.webp")
+    center / contain no-repeat;
+}
+
+.symbole-sad-1,
+.symbole-sad-2,
+.symbole-sad-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/emoji-sad.webp")
+    center / contain no-repeat;
+}
+
+/* STATS EMPLOYEES................................................................................................... */
+
+.effet-employee-stats-1,
+.effet-employee-stats-2,
+.effet-employee-stats-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  border-bottom: 1px solid orangered;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: black;
+  padding: 5px 7px;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: 0%;
+  z-index: 10;
+  gap: 7px;
+}
+
+.effet-employee-stats-1 {
+  left: 46.5%;
+}
+.effet-employee-stats-2 {
+  left: 69.7%;
+}
+.effet-employee-stats-3 {
+  left: 93%;
+}
+
+.effet-employee-name-1,
+.effet-employee-name-2,
+.effet-employee-name-3 {
+  color: white;
+  font-size: 6px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: var(--font-rock), sans-serif;
+  letter-spacing: 1px;
+}
+
+.effet-employee-level-1,
+.effet-employee-level-2,
+.effet-employee-level-3 {
+  color: rgba(255, 68, 0, 0.895);
+  font-size: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  gap: 3px;
+  align-items: center;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.effet-employee-level-1 span,
+.effet-employee-level-2 span,
+.effet-employee-level-3 span {
+  color: rgba(255, 68, 0, 0.895);
+  font-size: 9px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.effet-employee-money-1,
+.effet-employee-money-2,
+.effet-employee-money-3 {
+  color: #00f9a6;
+  font-size: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  gap: 3px;
+}
+
+.effet-employee-money-1 span,
+.effet-employee-money-2 span,
+.effet-employee-money-3 span {
+  font-size: 6.5px;
+  margin-right: 10px;
+  font-family: var(--font-rock), sans-serif;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* MUR ET HORLOGES................................................................................................... */
+
+.effet-smq-hq-logo {
+  font-size: 20px;
+  font-family: var(--font-alfa), sans-serif;
+  opacity: 0.8;
+  color: rgba(202, 202, 202, 0.338);
+  text-shadow: 0px 0px 2px rgba(228, 228, 228, 0.31);
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 4;
+  left: -65%;
+  bottom: 5%;
+  font-style: italic;
+  width: 100%;
+}
+
+.effet-mur-bureau-1 {
+  position: absolute;
+  left: -2%;
+  top: 0%;
+  height: 130px;
+  width: 350px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.723) 0%,
+    rgba(94, 94, 94, 0.426) 100%
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 3;
+  border-right: 8px solid rgba(50, 50, 50, 0.093);
+  overflow: hidden;
+}
+
+.effet-horloge-nyc,
+.effet-horloge-paris,
+.effet-horloge-tokyo {
+  position: absolute;
+  top: -2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transform: scale(0.7);
+  z-index: 4;
+}
+
+.effet-horloge-nyc {
+  left: 2%;
+}
+.effet-horloge-paris {
+  left: 7%;
+}
+.effet-horloge-tokyo {
+  left: 12%;
+}
+
+.effet-ecrito-nyc,
+.effet-ecrito-paris,
+.effet-ecrito-tokyo {
+  font-size: 9px;
+  font-weight: bold;
+  font-family: var(--font-poiret), sans-serif;
+  background-color: black;
+  width: 70px;
+  height: 18px;
+  border-radius: 5px;
+  color: rgba(255, 88, 27, 0.745);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px 0px rgba(255, 69, 0, 0.29);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.effet-heure-nyc,
+.effet-heure-paris,
+.effet-heure-tokyo {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/office-clock.webp")
+    center / contain no-repeat;
+  height: 75px;
+  width: 75px;
+  position: relative;
+}
+
+.clock-hand-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hand-hours,
+.hand-minutes,
+.hand-seconds {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateZ(0deg);
+  border-radius: 1px 1px 0 0;
+}
+
+.hand-hours {
+  width: 1px;
+  height: 14px;
+  background-color: #00f9a6;
+  margin-left: -1.5px;
+  z-index: 5;
+}
+
+.hand-minutes {
+  width: 1px;
+  height: 17px;
+  background-color: #00f9a6;
+  margin-left: -1px;
+  z-index: 6;
+}
+
+.hand-seconds {
+  width: 1px;
+  height: 20px;
+  background-color: orangered;
+  margin-left: -0.5px;
+  z-index: 7;
+}
+
+.hand-pivot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.69);
+  border-radius: 50%;
+  z-index: 8;
+}
+
+/* BUREAUX........................................................................................................... */
+
+.effet-bureau-1,
+.effet-bureau-2,
+.effet-bureau-3,
+.effet-employee-bureau-1,
+.effet-employee-bureau-2,
+.effet-employee-bureau-3 {
+  position: absolute;
+  top: -50%;
+  height: 300px;
+  width: 300px;
+  opacity: 1;
+}
+
+.effet-bureau-1,
+.effet-bureau-2,
+.effet-bureau-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/office-bureau.webp")
+    center / contain no-repeat;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.effet-employee-bureau-1,
+.effet-employee-bureau-2,
+.effet-employee-bureau-3 {
+  background: url("/svg/legal/banner-top-employee-game/employee-game/employee-working.webp")
+    center / contain no-repeat;
+  transform: scale(0.9);
+  filter: blur(5px);
+  z-index: 1;
+}
+
+.effet-bureau-1,
+.effet-employee-bureau-1 {
+  right: 50%;
+}
+.effet-bureau-2,
+.effet-employee-bureau-2 {
+  right: 27%;
+}
+.effet-bureau-3,
+.effet-employee-bureau-3 {
+  right: 4%;
+}
+
+/* EMPLOYEE GAME — ENTRY............................................................................................. */
+
+.employee-game-entry {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 0.6s ease,
+    backdrop-filter 0.6s ease,
+    -webkit-backdrop-filter 0.6s ease,
+    visibility 0s linear 0s;
+}
+
+.employee-game-entry.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  transition:
+    opacity 0.6s ease,
+    backdrop-filter 0.6s ease,
+    -webkit-backdrop-filter 0.6s ease,
+    visibility 0s linear 0.6s;
+}
+
+.employee-game-entry-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 45px;
+  padding: 0px 7%;
+  color: white;
+  background: rgba(0, 0, 0, 0.355);
+  border-top: 1px solid rgba(255, 69, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 69, 0, 0.6);
+  border-radius: 0;
+  box-shadow: 0 0 18px rgba(255, 69, 0, 0.2);
+  text-align: left;
+  justify-content: center;
+}
+
+.employee-game-entry-content p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.employee-game-entry-content p:first-child span {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 13px;
+}
+
+.employee-game-entry-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 0;
+}
+
+.employee-game-entry-actions button {
+  width: 90px;
+  padding: 10px 15px;
+  color: white;
+  background: black;
+  border: 1px solid orangered;
+  border-radius: 4px;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.employee-game-entry-actions button:hover {
+  color: rgb(0, 249, 166);
+  border-color: rgb(0, 249, 166);
+  box-shadow: 0 0 8px rgba(0, 249, 166, 0.4);
+}
+
+.employee-game-entry-actions button {
+  width: auto;
+  min-width: 150px;
+  padding-inline: 24px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* REGLES EMPLOYEE GAME.............................................................................................. */
+
+.employee-game-entry > .employee-game-rules {
+  position: static;
+  transform: none;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  margin: 0;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* EMPLOYEE GAME — REGLES SUCCESSIVES................................................................................ */
+
+.employee-game-rules-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.355);
+  border-top: 1px solid rgba(255, 69, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 69, 0, 0.6);
+}
+
+.employee-game-rules-screen > .employee-game-rule {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  text-align: center;
+  animation: employeeRuleFadeIn 0.5s ease both;
+}
+
+.employee-game-rules-screen > .employee-game-continue {
+  position: static;
+  transform: none;
+  margin: 0;
+  animation: employeeRuleFadeIn 0.5s ease both;
+}
+
+@media (max-width: 900px) {
+  .employee-game-rules-screen {
+    padding: 15px 20px;
+  }
+  .employee-game-rules-screen > .employee-game-rule {
+    font-size: 17px;
+    line-height: 1.5;
+    word-spacing: -2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employee-game-rules-screen > .employee-game-rule,
+  .employee-game-rules-screen > .employee-game-continue {
+    animation: none;
+  }
+}
+
+/* EMPLOYEE GAME — MOTS ET TRANSITION................................................................................ */
+
+.employee-game-rule > .employee-rule-highlight {
+  color: orangered;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.employee-game-entry-content.employee-welcome-exit {
+  pointer-events: none;
+}
+
+.employee-game-entry-content.employee-welcome-exit > p,
+.employee-game-entry-content.employee-welcome-exit
+  > .employee-game-entry-actions {
+  animation: employeeWelcomeFadeOut 0.5s ease forwards;
+}
+
+/* EMPLOYEE GAME — CHOIX DU NOM...................................................................................... */
+
+.employee-game-name-form {
+  width: min(100%, 720px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  text-align: center;
+}
+
+.employee-game-name-form > label {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.employee-game-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.employee-game-name-field {
+  position: relative;
+  width: 360px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.employee-game-name-slots {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.employee-game-name-slots > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.65);
+  color: #45a3ff;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.employee-game-name-field > input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  font-size: 23px;
+  cursor: text;
+}
+
+.employee-game-name-field:focus-within .employee-game-name-slots > span {
+  border-bottom-color: #45a3ff;
+}
+
+.employee-game-name-form > .employee-game-name-message {
+  min-height: 16px;
+  margin: 0;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.employee-game-name-message[role="status"] {
+  letter-spacing: 0;
+}
+
+.employee-game-name-row button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.effet-employee-name-1.employee-player-name {
+  color: #45a3ff;
+}
+
+@media (max-width: 600px) {
+  .employee-game-name-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .employee-game-name-form > label {
+    font-size: 18px;
+  }
+}
+
+.employee-game-name-row {
+  position: relative;
+  justify-content: center;
+}
+
+.employee-game-name-field {
+  flex: 0 1 360px;
+}
+
+.employee-game-name-row > .employee-game-entry-actions {
+  position: absolute;
+  left: calc(50% + 180px + 50px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+  .employee-game-name-row {
+    flex-direction: column;
+  }
+  .employee-game-name-field {
+    flex: none;
+  }
+  .employee-game-name-row > .employee-game-entry-actions {
+    position: static;
+    transform: none;
+  }
+}
+
+.employee-game-name-slots > span {
+  color: rgb(0, 249, 166);
+  border-bottom-color: rgb(0, 249, 166);
+}
+
+.employee-game-name-field:focus-within .employee-game-name-slots > span {
+  border-bottom-color: rgb(0, 249, 166);
+}
+
+.employee-game-name-slots > .employee-name-blink {
+  animation: employeeNameBlink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employee-game-name-slots > .employee-name-blink {
+    animation: none;
+  }
+}
+
+.employee-game-name-form > label {
+  font-size: 18px;
+}
+
+.employee-game-name-field {
+  transform: translateY(-5px);
+}
+
+.employee-game-name-message > .employee-name-enter {
+  color: orangered;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* KEYFRAMES......................................................................................................... */
+
+@keyframes employeeRuleFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes employeeWelcomeFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes employeeNameBlink {
+  0%,
+  100% {
+    border-bottom-color: rgb(0, 249, 166);
+  }
+  50% {
+    border-bottom-color: transparent;
+  }
+}
+@media (min-width: 1440px) {
+  #bonus-window-1,
+  #bonus-window-2,
+  #bonus-window-3 {
+    /* Le jeu injecte ce texte en ligne : force la police Poiret chargée localement. */
+    font-family: var(--font-poiret), sans-serif !important;
+  }
+}

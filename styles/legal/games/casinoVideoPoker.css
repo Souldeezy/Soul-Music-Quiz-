@@ -1,0 +1,365 @@
+/* VIDEO POKER BLUEPRINT.............................................................................................. */
+
+#blueprint-videoPoker {
+  display: none;
+  opacity: 0;
+}
+
+/* VIDEO POKER SCOREBOARD............................................................................................. */
+
+.casino-vp-scoreboard {
+  position: absolute;
+  top: 0;
+  left: 22%;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: rgb(2, 2, 2);
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.vp-score-title {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vp-score-row {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 8px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.vp-score-row:last-child {
+  border-bottom: none;
+}
+
+.vp-score-row span:last-child {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+/* VIDEO POKER GAME AREA.............................................................................................. */
+
+.casino-vp-game {
+  position: absolute;
+  top: 0;
+  left: 35.05%;
+  width: 790px;
+  height: 80.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: url("/images/legal/banner-bottom-nyc-games/casino/common/tapis-vert.png")
+    center / cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.323);
+  background-blend-mode: darken;
+  border-bottom: 1px solid orangered;
+  z-index: 0;
+}
+
+/* TABLE.............................................................................................................. */
+
+.vp-table {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* DECK............................................................................................................... */
+
+.vp-deck-stack {
+  position: relative;
+  width: 82px;
+  height: 110px;
+}
+
+.vp-deck-1,
+.vp-deck-2,
+.vp-deck-3 {
+  position: absolute;
+  width: 68px;
+  height: 96px;
+  background: url("/images/legal/banner-bottom-nyc-games/casino/video-poker/card-back.png")
+    center / cover no-repeat;
+  border: 2px solid orangered;
+}
+
+.vp-deck-1 {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.vp-deck-2 {
+  top: 4px;
+  left: 4px;
+  z-index: 2;
+}
+
+.vp-deck-3 {
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+}
+
+/* CARDS.............................................................................................................. */
+
+.vp-cards {
+  width: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.vp-card {
+  width: 68px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid rgba(30, 143, 255, 0.497);
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vp-card img {
+  width: 95%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.vp-deck,
+.vp-cards {
+  opacity: 0;
+}
+
+/* RESULT NOTIFICATIONS............................................................................................... */
+
+.vp-notif-combo,
+.vp-notif-lose {
+  display: inline-block;
+  margin-right: 8px;
+  color: orangered;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vp-notif-gain {
+  margin-left: 10px;
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+}
+
+/* VIDEO POKER ACTIONS................................................................................................ */
+
+.casino-vp-actions {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  box-sizing: border-box;
+  padding: 15px;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid orangered;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ACTION BUTTONS..................................................................................................... */
+
+.vp-action-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 0 5px 0 transparent;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.vp-action-btn:hover {
+  color: #00f9a6;
+  box-shadow: 0 0 3px 0 orangered inset;
+}
+
+/* NOTIFICATIONS...................................................................................................... */
+
+.casino-vp-notifications {
+  position: absolute;
+  bottom: 0;
+  left: 35.05%;
+  width: 790px;
+  height: 19.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 41, 41, 0.151);
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  z-index: 0;
+}
+
+.vp-notif-smq {
+  color: white;
+}
+
+.vp-notif-price {
+  color: orangered;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+}
+
+/* HIDDEN ELEMENTS.................................................................................................... */
+
+.vp-combo-label,
+.vp-combo-score,
+.vp-action-btn {
+  opacity: 0;
+}
+
+/* NEW GAME BUTTON.................................................................................................... */
+
+.vp-action-btn.blink {
+  color: #00f9a6;
+  box-shadow: 0 0 3px 0 orangered inset;
+  animation: vpNewGameBlink 2s infinite;
+}
+
+/* KEYFRAMES.......................................................................................................... */
+
+@keyframes vpLabelFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vpScoreSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes vpButtonFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vpSlideInLeft {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vpSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% + 80px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes vpSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vpFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vpNewGameBlink {
+  0%,
+  100% {
+    color: white;
+    box-shadow: 0 0 3px 0 transparent inset;
+  }
+
+  50% {
+    color: #00f9a6;
+    box-shadow: 0 0 3px 0 orangered inset;
+  }
+}

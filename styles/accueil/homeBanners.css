@@ -1,0 +1,284 @@
+.home-banner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 118px;
+  align-items: center;
+  gap: 32px;
+  padding: 36px clamp(32px, 7vw, 100px);
+  overflow: hidden;
+  border-block: 2px solid rgba(255, 69, 0, 0.29);
+  background: linear-gradient(180deg, rgba(255, 68, 0, 0.33), rgba(255, 68, 0, 0.48)), rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+}
+
+.home-banner h2 {
+  position: relative;
+  z-index: 4;
+  margin: 0;
+  color: orangered;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1s ease, transform 1.2s cubic-bezier(.19, 1, .22, 1);
+}
+
+.home-banner.is-visible h2 { opacity: 1; transform: translateX(0); }
+
+.home-banner-icons { position: relative; z-index: 4; display: flex; gap: 15px; color: rgba(255, 68, 0, 0.58); font-size: 30px; }
+.home-banner-icons i { opacity: 0; transform: translateX(-20px); transition: opacity .7s ease, transform .7s ease; }
+.home-banner.is-visible .home-banner-icons i { opacity: 1; transform: none; }
+.home-banner.is-visible .home-banner-icons i:nth-child(2) { transition-delay: .25s; }
+.home-banner.is-visible .home-banner-icons i:nth-child(3) { transition-delay: .5s; }
+
+.home-banner-sun { position: absolute; left: 60%; top: 25%; width: 250px; aspect-ratio: 1; border-radius: 50%; z-index: 2; opacity: 0; transform: translate(-50%, 60px); background: linear-gradient(#ac2e0095, #af2f00c0); box-shadow: 0 0 10px rgba(255, 68, 0, .4); }
+.home-banner-categories.is-window-1440 .home-banner-sun { right: 15%; left: auto; }
+.home-banner-categories.is-visible .home-banner-sun { animation: home-sun-rise 2.8s ease-out forwards; }
+.home-banner-birds { position: absolute; top: 20px; left: -80px; width: 70px; aspect-ratio: 1; z-index: 3; opacity: 0; background: url("/svg/accueil/banner-top-rising-sun/rising-sun-birds.svg") center / contain no-repeat; }
+.home-banner-categories.is-visible .home-banner-birds { animation: home-birds-fly 2.4s ease-in-out 1.1s forwards; }
+
+.home-banner-moon { position: absolute; top: -22%; right: 0; width: 150px; aspect-ratio: 1; z-index: 3; opacity: 0; filter: blur(8px); transform: translateY(-50px) scale(.7); background: url("/svg/accueil/banner-bottom-full-moon/full-moon-moon.svg") center / contain no-repeat; transition: opacity 2s ease, transform 2.5s ease, filter 1s ease; }
+.home-banner-about.is-visible .home-banner-moon { opacity: .3; filter: none; transform: translateY(0) scale(.7); }
+.home-banner-star { position: absolute; right: 150px; width: 65px; aspect-ratio: 1; z-index: 3; opacity: 0; background: url("/svg/accueil/banner-bottom-full-moon/full-moon-stars.svg") center / contain no-repeat; }
+.home-banner-about.is-visible .home-banner-star { animation: home-twinkle 2.5s infinite 1.2s alternate; }
+.home-banner-star.star-1 { top: -5px; right: 200px; transform: scale(.05); }.home-banner-star.star-2 { top: 15px; right: 250px; transform: scale(.1); }.home-banner-star.star-3 { top: 5px; right: 300px; transform: scale(.07); }.home-banner-star.star-4 { top: -20px; right: 230px; transform: scale(.06); }.home-banner-star.star-5 { top: -16px; right: 130px; transform: scale(.09); }.home-banner-star.star-6 { top: 26px; right: 160px; transform: scale(.1); }.home-banner-star.star-7 { top: 31px; right: 110px; transform: scale(.04); }
+
+@keyframes home-sun-rise { to { opacity: .75; transform: translate(-50%, 0); } }
+@keyframes home-birds-fly { 0% { transform: translateX(10vw) scale(.6); opacity: 0; } 15% { opacity: .3; } 100% { transform: translateX(85vw) scale(.6); opacity: 0; } }
+@keyframes home-twinkle { to { opacity: 1; } }
+
+@keyframes home-sun-rise-320 {
+  to { opacity: .75; transform: translate(-50%, 18px); }
+}
+
+@keyframes home-sun-rise-375 {
+  to { opacity: .75; transform: translate(-50%, 16px); }
+}
+
+@keyframes home-sun-rise-768 {
+  to { opacity: .75; transform: translate(-50%, 16px); }
+}
+
+@keyframes home-sun-rise-1024 {
+  to { opacity: .75; transform: translate(-50%, 12px); }
+}
+
+@keyframes home-sun-rise-1280 {
+  to { opacity: .75; transform: translate(-50%, 10px); }
+}
+
+@keyframes home-sun-rise-1366 {
+  to { opacity: .75; transform: translate(-50%, 8px); }
+}
+
+@keyframes home-sun-rise-1439 {
+  to { opacity: .75; transform: translate(-50%, 6px); }
+}
+
+@keyframes home-sun-rise-1440 {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: .75; transform: translateY(0); }
+}
+
+@keyframes home-sun-rise-1920 {
+  to { opacity: .75; transform: translate(-50%, 4px); }
+}
+
+@keyframes home-sun-rise-2560 {
+  to { opacity: .75; transform: translate(-50%, 4px); }
+}
+
+@keyframes home-birds-fly-320 {
+  0% { transform: translateX(10vw) scale(.6); opacity: 0; }
+  15% { opacity: .3; }
+  100% { transform: translateX(calc(100vw + 80px)) scale(.6); opacity: .3; }
+}
+
+@keyframes home-birds-fly-2580 {
+  0% { transform: translateX(10vw) scale(.6); opacity: 0; }
+  15% { opacity: .3; }
+  100% { transform: translateX(110vw) scale(.6); opacity: .3; }
+}
+
+@media (max-width: 375.98px) {
+  .home-banner-categories.is-visible .home-banner-birds {
+    animation-name: home-birds-fly-320;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-banner-categories.is-visible .home-banner-birds {
+    animation-name: home-birds-fly-320;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) { .home-banner { min-height: 104px; padding: 30px clamp(30px, 6vw, 70px); } .home-banner h2 { font-size: clamp(27px, 3vw, 33px); } .home-banner-icons { font-size: 26px; } }
+@media (max-width: 767.98px) { .home-banner { min-height: 88px; justify-content: center; gap: 18px; padding: 25px 16px; } .home-banner h2 { font-size: clamp(22px, 7vw, 29px); letter-spacing: 1px; } .home-banner-icons { gap: 10px; font-size: 20px; } .home-banner-sun { left: 66%; width: 170px; } .home-banner-moon { width: 110px; } .home-banner-star { right: 80px; } }
+@media (prefers-reduced-motion: reduce) { .home-banner h2, .home-banner-icons i, .home-banner-sun, .home-banner-birds, .home-banner-moon, .home-banner-star { animation: none !important; transition: none; } .home-banner h2, .home-banner-icons i { opacity: 1; transform: none; } }
+
+@media (max-width: 375.98px) {
+  .home-banner { justify-content: flex-start; padding-inline: 14px; gap: 14px; }
+  .home-banner h2 { font-size: 20px; letter-spacing: .5px; }
+  .home-banner-icons { font-size: 17px; gap: 8px; }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-12px) scale(.7);
+  }
+}
+
+@media (max-width: 320px) {
+  .home-banner-sun {
+    left: 75%;
+    width: 110px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-320;
+  }
+
+}
+
+@media (min-width: 320.01px) and (max-width: 375.98px) {
+  .home-banner-sun {
+    left: 72%;
+    width: 135px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-375;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 799.98px) {
+  .home-banner-sun {
+    left: 70%;
+    width: 210px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-768;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-16px) scale(.7);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1049.98px) {
+  .home-banner-sun {
+    left: 73%;
+    width: 225px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1024;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-20px) scale(.7);
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1309.98px) {
+  .home-banner-sun {
+    left: 72%;
+    width: 235px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1280;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-18px) scale(.7);
+  }
+}
+
+@media (min-width: 1340px) and (max-width: 1389.98px) {
+  .home-banner-sun {
+    left: 72%;
+    width: 240px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1366;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-16px) scale(.7);
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1424.98px) {
+  .home-banner-sun {
+    left: 72%;
+    width: 245px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1439;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-14px) scale(.7);
+  }
+}
+
+@media (min-width: 1425px) and (max-width: 1479.98px) {
+  .home-banner-sun {
+    right: 15%;
+    left: auto;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1440;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-10px) scale(.7);
+  }
+}
+
+/* Keep the validated desktop position when the DevTools panel is closed. */
+@media (min-width: 1480px) {
+  .home-banner-sun {
+    right: 15%;
+    left: auto;
+  }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-banner { min-height: 220px; padding: 62px 140px; gap: 56px; }
+  .home-banner h2 { font-size: 54px; }
+  .home-banner-icons { gap: 28px; font-size: 48px; }
+  .home-banner-birds { width: 120px; }
+  .home-banner-moon { width: 260px; }
+  .home-banner-star { right: 220px; width: 110px; }
+  .home-banner-sun {
+    right: 5%;
+    left: auto;
+    width: 380px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-1920;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-12px) scale(.7);
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-banner { min-height: 240px; padding: 60px 180px; gap: 70px; }
+  .home-banner h2 { font-size: 64px; }
+  .home-banner-icons { gap: 34px; font-size: 58px; }
+  .home-banner-birds { width: 150px; }
+  .home-banner-categories.is-visible .home-banner-birds { animation-name: home-birds-fly-2580; }
+  .home-banner-moon { width: 320px; }
+  .home-banner-star { width: 70px; transform: scale(1); }
+  .home-banner-star.star-1 { top: 22px; right: 34%; transform: scale(.12); }
+  .home-banner-star.star-2 { top: 58px; right: 28%; transform: scale(.14); }
+  .home-banner-star.star-3 { top: 18px; right: 18%; transform: scale(.11); }
+  .home-banner-star.star-4 { top: 96px; right: 12%; transform: scale(.13); }
+  .home-banner-star.star-5 { top: 20px; right: 7%; transform: scale(.15); }
+  .home-banner-star.star-6 { top: 128px; right: 22%; transform: scale(.12); }
+  .home-banner-star.star-7 { top: 142px; right: 36%; transform: scale(.1); }
+  .home-banner-sun {
+    right: 4%;
+    left: auto;
+    width: 520px;
+  }
+  .home-banner-categories.is-visible .home-banner-sun {
+    animation-name: home-sun-rise-2560;
+  }
+  .home-banner-about.is-visible .home-banner-moon {
+    transform: translateY(-10px) scale(.7);
+  }
+}

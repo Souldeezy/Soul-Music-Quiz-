@@ -1,0 +1,303 @@
+.home-cta-short { display: none; }
+
+.home-hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/images/accueil/common/hero-accueil.webp") center / cover no-repeat;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 50%, #000 100%);
+}
+
+.home-hero-title-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.home-hero-logo {
+  position: absolute;
+  top: 30%;
+  width: 350px;
+  aspect-ratio: 1;
+  z-index: 1;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.638) url("/images/shared/logo-smq.webp") center / cover;
+  background-blend-mode: darken;
+  opacity: 0.82;
+  animation: home-logo-rise 3.2s ease-out forwards, home-vinyl-spin 10s linear 3.2s infinite;
+}
+
+.home-hero-title {
+  display: flex;
+  position: relative;
+  top: -15px;
+  align-items: baseline;
+  justify-content: center;
+  z-index: 3;
+  margin: 0;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 3px;
+  text-shadow: 0 0 5px rgba(183, 183, 183, 0.73);
+  white-space: nowrap;
+}
+
+.home-letter {
+  display: inline-block;
+  color: orangered;
+  font-size: 110px;
+  text-shadow: none;
+  opacity: 0;
+  animation: home-fade-in 0.8s ease-out forwards, home-letter-glow 10s ease-in-out infinite;
+}
+
+.home-letter-s { animation-delay: 0.5s; }
+.home-letter-m { animation-delay: 1s; }
+.home-letter-q { animation-delay: 1.5s; }
+
+.home-rest {
+  display: inline-block;
+  opacity: 0;
+  animation: home-fade-bottom 3s ease-out forwards;
+}
+
+.home-rest-oul { animation-delay: 2s; }
+.home-rest-usic { animation-delay: 2.2s; }
+.home-rest-uiz { animation-delay: 2.4s; }
+
+.home-hero-details {
+  position: relative;
+  top: -15px;
+  z-index: 3;
+  margin: -10px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 0;
+  animation: home-fade-bottom 2s ease-out 2.8s forwards;
+}
+
+.home-hero-cta {
+  position: absolute;
+  bottom: 20%;
+  z-index: 3;
+  padding: 15px 25px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.58);
+  opacity: 0;
+  animation: home-fade-bottom 0.8s ease-out 3s forwards;
+  transition: color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.home-hero-cta:hover,
+.home-hero-cta:focus-visible {
+  color: rgb(48, 255, 169);
+  background: #000;
+  box-shadow: 0 0 5px orangered;
+}
+
+@keyframes home-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes home-fade-up { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes home-logo-rise { from { opacity: 0; translate: 0 60px; } to { opacity: 1; translate: 0 0; } }
+@keyframes home-fade-bottom { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes home-vinyl-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes home-letter-glow { 0%, 20%, 80%, 100% { text-shadow: none; } 50% { text-shadow: 0 0 18px rgba(255, 68, 0, 0.65), 0 0 18px rgba(255, 140, 0, 0.6); } }
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-hero { min-height: clamp(680px, 100svh, 900px); }
+  .home-hero-logo { top: 30%; width: clamp(220px, 25vw, 350px); }
+  .home-hero-title { font-size: clamp(60px, 7vw, 86px); }
+  .home-letter { font-size: clamp(68px, 7.7vw, 95px); }
+  .home-hero-details { width: min(62vw, 580px); font-size: clamp(21px, 2.4vw, 28px); font-weight: 400; line-height: 1.45; text-wrap: balance; }
+  .home-hero-cta { bottom: 20%; width: 190px; padding: 14px 20px; font-size: 17px; letter-spacing: 1px; }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .home-hero-cta {
+    bottom: calc(20% + 60px) !important;
+    width: 160px;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .home-hero-cta {
+    bottom: calc(20% + 60px);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1365.98px) {
+  .home-hero-cta {
+    bottom: calc(20% + 40px);
+    width: 210px;
+    padding: 15px 22px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1439.98px) {
+  .home-hero-cta {
+    bottom: calc(20% + 35px);
+    width: 210px;
+    padding: 16px 24px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-hero-details {
+    animation: texte-fade-left 4s cubic-bezier(0.19, 1, 0.22, 1) 2.5s forwards !important;
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  .home-hero { min-height: max(620px, 100svh); }
+  .home-hero-logo { top: 30%; width: clamp(150px, 48vw, 220px); }
+  .home-hero-title { flex-wrap: nowrap; width: auto; max-width: 94%; font-size: clamp(32px, 8.3vw, 62px); letter-spacing: .5px; line-height: 1.4; white-space: nowrap; }
+  .home-letter { font-size: 1.1em; }
+  .home-hero-details { width: min(86vw, 480px); margin-top: 10px; font-size: clamp(18px, 4.8vw, 24px); line-height: 1.45; text-wrap: balance; }
+  .home-hero-cta { bottom: 20%; width: max-content; max-width: 86vw; padding: 12px 18px; font-size: clamp(14px, 4vw, 17px); letter-spacing: 2px; }
+  .home-hero-logo, .home-letter, .home-rest, .home-hero-details, .home-hero-cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-hero-details {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: home-text-fade-left 4s cubic-bezier(0.19, 1, 0.22, 1) 2.5s forwards !important;
+  }
+}
+
+@keyframes home-text-fade-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 767.98px) {
+  .home-hero-details {
+    opacity: 0;
+    transform: none;
+    animation: home-fade-bottom 2s ease-out 2.8s forwards !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-logo, .home-letter, .home-rest, .home-hero-details, .home-hero-cta { animation: none; opacity: 1; transform: none; }
+}
+
+@media (max-width: 375.98px) {
+  .home-hero-title { font-size: 36px; letter-spacing: 0; }
+  .home-hero-details { width: 260px; max-width: 84vw; font-size: 17px; font-weight: 400; line-height: 1.45; }
+  .home-hero-cta { width: 152px; max-width: 60vw; padding: 12px 14px; font-size: 16px; letter-spacing: 1px; }
+}
+
+@media (max-width: 320px) {
+  .home-hero-cta {
+    bottom: calc(20% + 70px);
+    width: 136px;
+    max-width: 56vw;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 320.01px) and (max-width: 375.98px) {
+  .home-hero-cta {
+    bottom: calc(20% + 70px);
+    width: 152px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-hero-logo { top: 29%; width: 460px; }
+  .home-hero-title { font-size: 170px; }
+  .home-letter { font-size: 188px; }
+  .home-hero-details {
+    width: 900px;
+    font-size: 42px;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .home-hero-cta {
+    width: 300px;
+    min-height: 82px;
+    padding: 22px 36px;
+    border-radius: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 1425px) and (max-width: 1479.98px) {
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-hero-logo { width: 500px; }
+  .home-hero-title { font-size: 180px; }
+  .home-letter { font-size: 200px; }
+  .home-hero-details {
+    width: 700px;
+    font-size: 48px;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .home-hero-cta {
+    bottom: calc(20% + 40px);
+    width: 360px;
+    padding: 28px 46px;
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+  .home-cta-full { display: none; }
+  .home-cta-short { display: inline; }
+}
+
+@media (max-width: 767.98px) {
+  .home-hero-details {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .home-hero-logo {
+    animation: home-vinyl-spin 10s linear 3.2s infinite;
+  }
+
+  .home-letter {
+    animation: home-fade-in 0.8s ease-out forwards, home-letter-glow 10s ease-in-out infinite;
+  }
+
+  .home-rest {
+    animation: home-fade-bottom 3s ease-out forwards;
+  }
+}

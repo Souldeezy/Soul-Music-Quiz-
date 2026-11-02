@@ -1,0 +1,2 @@
+.hero.hero { background-image: url("/images/quiz/new-york/hero-new-york.webp"); }
+.cta:global(.next-step-section):global(.california-soul-cta) { background-image: url("/images/quiz/new-york/cta-new-york.webp"); background-position: center; }

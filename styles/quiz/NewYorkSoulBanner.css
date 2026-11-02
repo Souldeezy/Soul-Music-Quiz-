@@ -1,0 +1,1361 @@
+/* Scoped vanilla New York banners; all assets resolve inside SMQ/public. */
+.new-york-soul-page .banner-categories {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  padding: 40px 100px;
+
+  background: linear-gradient(
+    180deg,
+    #ff44007c 0%,
+    #ff44006f 10%,
+    #ff440067 100%
+  );
+  background-color: rgba(0, 0, 0, 0.649);
+  background-blend-mode: darken;
+
+  border-top: 2px solid rgba(255, 69, 0, 0.29);
+  border-bottom: 2px solid rgba(255, 69, 0, 0.29);
+
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.new-york-soul-page .banner-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 40px 100px;
+
+  background: linear-gradient(
+    180deg,
+    #ff44007c 0%,
+    #ff44006f 10%,
+    #ff440067 100%
+  );
+  background-color: rgba(0, 0, 0, 0.824);
+  background-blend-mode: darken;
+
+  border-top: 2px solid #ff45004a;
+  border-bottom: 2px solid rgba(255, 69, 0, 0.29);
+
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.new-york-soul-page .banner-categories h2,
+.new-york-soul-page .banner-legal h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #ff4500;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(25px);
+  z-index: 3;
+}
+
+.new-york-soul-page .banner-legal h2 {
+  margin-right: 33px;
+}
+
+/* .................................................................................................EFFET BACKGROUND BANNIERE 1 */
+
+.new-york-soul-page #metro-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.new-york-soul-page .banner-video-bg {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+
+  /* On définit l'état de départ de l'animation */
+  transform: translate(-50%, -50%);
+  filter: brightness(0.3) blur(1px);
+
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+/* --- Déclenchement de l'animation --- */
+/* Quand la bannière a la classe .is-visible, on lance l'animation */
+.new-york-soul-page #metro-banner.is-visible .banner-video-bg {
+  animation-name: ny-simple-loop;
+  animation-duration: 60s;
+  animation-timing-function: ease-in-out;
+
+  /* LA MODIFICATION EST ICI : L'animation se répète à l'infini */
+  animation-iteration-count: infinite;
+
+  /* On s'assure qu'elle alterne entre l'état de début et de fin */
+  animation-direction: alternate;
+}
+
+.new-york-soul-page #metro-banner h2,
+.new-york-soul-page #metro-banner .banner-bar {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Keyframe pour l'animation en boucle --- */
+@keyframes ny-simple-loop {
+  /* Point de départ de l'animation */
+  from {
+    transform: translate(-50%, -50%);
+    filter: brightness(0.5) blur(1px);
+  }
+  /* Point d'arrivée de l'animation */
+  to {
+    /* Vous pouvez changer ces valeurs pour créer le mouvement que vous voulez */
+    transform: translate(-40%, -60%);
+    filter: brightness(0.5) blur(1px);
+  }
+}
+
+/* .................................................................................................EFFET BACKGROUND BANNIERE 1 */
+
+/* --- DÉCOR DE BASE --- */
+.new-york-soul-page .effet-deck-self {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  width: 1600px;
+  background-color: rgba(0, 0, 0, 0.837);
+  box-shadow: 0px 0px 5px 0px rgba(255, 68, 0, 0.625);
+  z-index: 2;
+  opacity: 0; /* Caché pour l'animation */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* --- VITRINES (STRUCTURE) --- */
+.new-york-soul-page .effet-vitrine-self-1,
+.new-york-soul-page .effet-vitrine-self-2,
+.new-york-soul-page .effet-vitrine-self-3,
+.new-york-soul-page .effet-vitrine-self-4,
+.new-york-soul-page .effet-vitrine-self-5 {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  transform: scale(2.5);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-self-service-vitrine.webp") center / contain no-repeat;
+  z-index: 1;
+  opacity: 0; /* Caché pour l'animation */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.new-york-soul-page .effet-vitrine-self-1 {
+  right: 63%;
+  bottom: -17%;
+}
+.new-york-soul-page .effet-vitrine-self-2 {
+  right: 45%;
+  bottom: -17%;
+}
+.new-york-soul-page .effet-vitrine-self-3 {
+  right: 27%;
+  bottom: -17%;
+}
+.new-york-soul-page .effet-vitrine-self-4 {
+  right: 9%;
+  bottom: -17%;
+}
+.new-york-soul-page .effet-vitrine-self-5 {
+  right: -9%;
+  bottom: -17%;
+}
+
+/* --- SACS SUR LE PLATEAU --- */
+.new-york-soul-page .effet-bag-paid-1,
+.new-york-soul-page .effet-bag-paid-2,
+.new-york-soul-page .effet-bag-paid-3,
+.new-york-soul-page .effet-bag-paid-4,
+.new-york-soul-page .effet-bag-paid-5,
+.new-york-soul-page .effet-bag-paid-6,
+.new-york-soul-page .effet-bag-paid-7,
+.new-york-soul-page .effet-bag-paid-8 {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  opacity: 0; /* Caché pour l'animation */
+}
+
+.new-york-soul-page .effet-bag-paid-1 {
+  left: -5%;
+  bottom: -34%;
+  transform: rotateZ(4.5deg) scale(0.7);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 9;
+}
+.new-york-soul-page .effet-bag-paid-2 {
+  left: -1%;
+  bottom: -34%;
+  transform: rotateZ(4.5deg) scale(0.7);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 8;
+}
+.new-york-soul-page .effet-bag-paid-3 {
+  left: 2.3%;
+  bottom: -43%;
+  transform: rotateZ(4.5deg) scale(0.55);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 7;
+}
+.new-york-soul-page .effet-bag-paid-4 {
+  left: 5.3%;
+  bottom: -43%;
+  transform: rotateZ(4.5deg) scale(0.55);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 6;
+}
+.new-york-soul-page .effet-bag-paid-5 {
+  left: 7.8%;
+  bottom: -54.5%;
+  transform: rotateZ(4.5deg) scale(0.35);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 5;
+}
+.new-york-soul-page .effet-bag-paid-6 {
+  left: 9.8%;
+  bottom: -54.5%;
+  transform: rotateZ(4.5deg) scale(0.35);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 4;
+}
+.new-york-soul-page .effet-bag-paid-7 {
+  left: 11.5%;
+  bottom: -60.3%;
+  transform: rotateZ(4deg) scale(0.25);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 3;
+}
+.new-york-soul-page .effet-bag-paid-8 {
+  left: 12.8%;
+  bottom: -60.3%;
+  transform: rotateZ(4deg) scale(0.25);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center / contain no-repeat;
+  z-index: 2;
+}
+
+/* --- ALIMENTS (EXEMPLES DE CLASSES) --- */
+/* Note : J'ai mis l'opacité à 0 sur toutes ces classes d'aliments */
+.new-york-soul-page .effet-fried-chicken-1,
+.new-york-soul-page .effet-fried-chicken-2,
+.new-york-soul-page .effet-fried-chicken-3,
+.new-york-soul-page .effet-fried-chicken-4,
+.new-york-soul-page .effet-shrimp-1,
+.new-york-soul-page .effet-shrimp-2,
+.new-york-soul-page .effet-shrimp-3,
+.new-york-soul-page .effet-shrimp-stew-1,
+.new-york-soul-page .effet-shrimp-stew-2,
+.new-york-soul-page .effet-shrimp-fritters-1,
+.new-york-soul-page .effet-shrimp-fritters-2,
+.new-york-soul-page .effet-shrimp-fritters-3,
+.new-york-soul-page .effet-mac-cheese-1,
+.new-york-soul-page .effet-mac-cheese-2,
+.new-york-soul-page .effet-drink-soul-1,
+.new-york-soul-page .effet-drink-soul-2,
+.new-york-soul-page .effet-drink-soul-3,
+.new-york-soul-page .effet-drink-soul-4,
+.new-york-soul-page .effet-drink-soul-5,
+.new-york-soul-page .effet-drink-soul-6,
+.new-york-soul-page .effet-drink-soul-7,
+.new-york-soul-page .effet-drink-soul-8,
+.new-york-soul-page .effet-drink-funk-1,
+.new-york-soul-page .effet-drink-funk-2,
+.new-york-soul-page .effet-drink-funk-3,
+.new-york-soul-page .effet-drink-funk-4,
+.new-york-soul-page .effet-drink-funk-5,
+.new-york-soul-page .effet-drink-funk-6,
+.new-york-soul-page .effet-lemonade-1,
+.new-york-soul-page .effet-lemonade-2,
+.new-york-soul-page .effet-lemonade-3,
+.new-york-soul-page .effet-lemonade-4,
+.new-york-soul-page .effet-lemonade-5,
+.new-york-soul-page .effet-lemonade-6,
+.new-york-soul-page .effet-lemonade-7,
+.new-york-soul-page .effet-lemonade-8,
+.new-york-soul-page .effet-beer-1,
+.new-york-soul-page .effet-beer-2,
+.new-york-soul-page .effet-beer-3,
+.new-york-soul-page .effet-beer-4,
+.new-york-soul-page .effet-beer-5,
+.new-york-soul-page .effet-beer-6,
+.new-york-soul-page .effet-beer-7,
+.new-york-soul-page .effet-oj-1,
+.new-york-soul-page .effet-oj-2,
+.new-york-soul-page .effet-oj-3,
+.new-york-soul-page .effet-oj-4,
+.new-york-soul-page .effet-oj-5,
+.new-york-soul-page .effet-oj-6,
+.new-york-soul-page .effet-oj-7,
+.new-york-soul-page .effet-oj-8,
+.new-york-soul-page .effet-cranberries-1,
+.new-york-soul-page .effet-cranberries-2,
+.new-york-soul-page .effet-cranberries-3,
+.new-york-soul-page .effet-cranberries-4,
+.new-york-soul-page .effet-cranberries-5,
+.new-york-soul-page .effet-milk-shake-1,
+.new-york-soul-page .effet-milk-shake-2,
+.new-york-soul-page .effet-milk-shake-3,
+.new-york-soul-page .effet-milk-shake-4,
+.new-york-soul-page .effet-banana-pudding-1,
+.new-york-soul-page .effet-banana-pudding-2,
+.new-york-soul-page .effet-banana-pudding-3,
+.new-york-soul-page .effet-pumpkin-pie-1,
+.new-york-soul-page .effet-pumpkin-pie-2,
+.new-york-soul-page .effet-pumpkin-pie-3,
+.new-york-soul-page .effet-sweet-potato-pie-1,
+.new-york-soul-page .effet-sweet-potato-pie-2,
+.new-york-soul-page .effet-waffle-1,
+.new-york-soul-page .effet-waffle-2,
+.new-york-soul-page .effet-waffle-3,
+.new-york-soul-page .effet-peach-cobbler-1,
+.new-york-soul-page .effet-peach-cobbler-2,
+.new-york-soul-page .effet-package-bag-1,
+.new-york-soul-page .effet-package-bag-2,
+.new-york-soul-page .effet-package-bag-3,
+.new-york-soul-page .effet-package-bag-4,
+.new-york-soul-page .effet-package-bag-5,
+.new-york-soul-page .effet-package-bag-6,
+.new-york-soul-page .effet-menu-bag-1,
+.new-york-soul-page .effet-menu-bag-2,
+.new-york-soul-page .effet-menu-bag-3,
+.new-york-soul-page .effet-menu-bag-4,
+.new-york-soul-page .effet-menu-bag-5,
+.new-york-soul-page .effet-menu-bag-6,
+.new-york-soul-page .effet-package-bag-7,
+.new-york-soul-page .effet-package-bag-8,
+.new-york-soul-page .effet-package-bag-9,
+.new-york-soul-page .effet-package-bag-10,
+.new-york-soul-page .effet-package-bag-11,
+.new-york-soul-page .effet-package-bag-12,
+.new-york-soul-page .effet-package-bag-13,
+.new-york-soul-page .effet-package-bag-14,
+.new-york-soul-page .effet-package-bag-15,
+.new-york-soul-page .effet-package-bag-16,
+.new-york-soul-page .effet-package-bag-17,
+.new-york-soul-page .effet-package-bag-18 {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  opacity: 0; /* Caché pour l'animation */
+  transform: scale(1);
+}
+
+/* --- CLASSES DU MENU D'ACTION --- */
+.new-york-soul-page .action-button {
+  background-color: transparent;
+  color: orangered;
+  border: 2px solid rgba(255, 69, 0, 0.29);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: var(--font-poiret), sans-serif;
+  font-weight: bold;
+}
+
+.new-york-soul-page .action-button:hover {
+  transition: 0.1s ease-in-out;
+  background-color: rgba(255, 68, 0, 0.742);
+  color: black;
+}
+
+.new-york-soul-page #valider-btn:hover {
+  transition: 0.1s ease-in-out;
+  background-color: rgb(0, 249, 166);
+  color: black;
+}
+
+.new-york-soul-page .rules-game {
+  font-size: 9px;
+  position: absolute;
+  bottom: -5.5px;
+  right: 30px;
+  font-style: italic;
+  color: white;
+  display: flex;
+  gap: 5px;
+  font-weight: 100;
+  font-family: var(--font-poiret), sans-serif;
+}
+
+.new-york-soul-page .rules-game strong {
+  color: orangered;
+  font-weight: bold;
+}
+
+/* --- VITRINE 1 : SAVORY --- */
+.new-york-soul-page .effet-fried-chicken-1 {
+  right: 68%;
+  bottom: 8%;
+  transform: scale(0.3);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-fried-chicken.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-fried-chicken-2 {
+  right: 65%;
+  bottom: 8%;
+  transform: scale(0.3);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-fried-chicken.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-fried-chicken-3 {
+  right: 62%;
+  bottom: 8%;
+  transform: scale(0.3);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-fried-chicken.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-fried-chicken-4 {
+  right: 59%;
+  bottom: 8%;
+  transform: scale(0.3);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-fried-chicken.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-shrimp-1 {
+  right: 68%;
+  bottom: -23%;
+  transform: scale(0.27);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimps.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-shrimp-2 {
+  right: 64.5%;
+  bottom: -23%;
+  transform: scale(0.27);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimps.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-shrimp-stew-1 {
+  right: 61%;
+  bottom: -21.5%;
+  transform: scale(0.2);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimp-stew.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-shrimp-stew-2 {
+  right: 58.5%;
+  bottom: -21.5%;
+  transform: scale(0.2);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimp-stew.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-shrimp-fritters-1 {
+  right: 68%;
+  bottom: -49.5%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimp-fritters.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-shrimp-fritters-2 {
+  right: 65%;
+  bottom: -49.5%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-shrimp-fritters.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-mac-cheese-1 {
+  right: 61%;
+  bottom: -48%;
+  transform: scale(0.2);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-mac-n-cheese.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-mac-cheese-2 {
+  right: 58%;
+  bottom: -48%;
+  transform: scale(0.2);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-mac-n-cheese.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* --- VITRINE 2 : DRINKS --- */
+.new-york-soul-page .effet-drink-soul-1 {
+  right: 51%;
+  bottom: 8%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-soul.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-soul-2 {
+  right: 49.5%;
+  bottom: 8%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-soul.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-soul-3 {
+  right: 48%;
+  bottom: 8%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-soul.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-soul-4 {
+  right: 46.5%;
+  bottom: 8%;
+  transform: scale(0.24);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-soul.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-drink-funk-1 {
+  right: 44.5%;
+  bottom: 6.3%;
+  transform: scale(0.22);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-funk.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-funk-2 {
+  right: 43%;
+  bottom: 6.3%;
+  transform: scale(0.22);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-funk.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-funk-3 {
+  right: 41.5%;
+  bottom: 6.3%;
+  transform: scale(0.22);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-funk.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-drink-funk-4 {
+  right: 40%;
+  bottom: 6.3%;
+  transform: scale(0.22);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-drink-funk.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-lemonade-1 {
+  right: 51%;
+  bottom: -23.5%;
+  transform: scale(0.18);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-lemonade.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-lemonade-2 {
+  right: 49.5%;
+  bottom: -23.5%;
+  transform: scale(0.18);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-lemonade.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-lemonade-3 {
+  right: 48%;
+  bottom: -23.5%;
+  transform: scale(0.18);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-lemonade.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-lemonade-4 {
+  right: 46.5%;
+  bottom: -23.5%;
+  transform: scale(0.18);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-lemonade.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-beer-1 {
+  right: 44.5%;
+  bottom: -23.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-beer.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-beer-2 {
+  right: 43%;
+  bottom: -23.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-beer.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-beer-3 {
+  right: 41.5%;
+  bottom: -23.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-beer.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-beer-4 {
+  right: 40%;
+  bottom: -23.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-beer.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-oj-1 {
+  right: 51%;
+  bottom: -45.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-orange-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-oj-2 {
+  right: 49.5%;
+  bottom: -45.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-orange-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-oj-3 {
+  right: 48%;
+  bottom: -45.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-orange-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-oj-4 {
+  right: 46.5%;
+  bottom: -45.5%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-orange-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-cranberries-1 {
+  right: 44.5%;
+  bottom: -47%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-cranberry-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-cranberries-2 {
+  right: 43%;
+  bottom: -47%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-cranberry-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-cranberries-3 {
+  right: 41.5%;
+  bottom: -47%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-cranberry-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-cranberries-4 {
+  right: 40%;
+  bottom: -47%;
+  transform: scale(0.17);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-cranberry-juice.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+/* --- VITRINE 3 : SWEETS --- */
+.new-york-soul-page .effet-milk-shake-1 {
+  right: 32%;
+  bottom: 5%;
+  transform: rotateY(150deg) scale(0.25);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-milk-shake.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-milk-shake-2 {
+  right: 30%;
+  bottom: 5%;
+  transform: rotateY(150deg) scale(0.25);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-milk-shake.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-milk-shake-3 {
+  right: 28%;
+  bottom: 5%;
+  transform: rotateY(150deg) scale(0.25);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-milk-shake.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-banana-pudding-1 {
+  right: 25%;
+  bottom: 2.5%;
+  transform: rotateY(150deg) scale(0.21);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-banana-pudding.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-banana-pudding-2 {
+  right: 23%;
+  bottom: 2.5%;
+  transform: rotateY(150deg) scale(0.21);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-banana-pudding.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-pumpkin-pie-1 {
+  right: 32%;
+  bottom: -25%;
+  transform: scale(0.33);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-pumpkin-cake.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-pumpkin-pie-2 {
+  right: 28.5%;
+  bottom: -25%;
+  transform: rotateY(180deg) scale(0.33);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-pumpkin-cake.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-sweet-potato-pie-1 {
+  right: 25%;
+  bottom: -27%;
+  transform: rotateY(150deg) scale(0.34);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-sweet-potato-pie.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-sweet-potato-pie-2 {
+  right: 22.5%;
+  bottom: -27%;
+  transform: rotateY(150deg) scale(0.34);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-sweet-potato-pie.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-waffle-1 {
+  right: 32.5%;
+  bottom: -50%;
+  transform: rotateY(150deg) scale(0.38);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-pancakes.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-waffle-2 {
+  right: 29.5%;
+  bottom: -50%;
+  transform: rotateY(150deg) scale(0.38);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-pancakes.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.new-york-soul-page .effet-peach-cobbler-1 {
+  right: 26%;
+  bottom: -48%;
+  transform: rotateY(150deg) scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-peach-cobbler.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-peach-cobbler-2 {
+  right: 23%;
+  bottom: -48%;
+  transform: rotateY(150deg) scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-peach-cobbler.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* --- VITRINE 4 & 5 : PACKAGES --- */
+.new-york-soul-page .effet-package-bag-1 {
+  right: 15.3%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-2 {
+  right: 12.8%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-3 {
+  right: 10.3%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-4 {
+  right: 7.8%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-5 {
+  right: 5.3%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-6 {
+  right: 2.8%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-menu-bag-1 {
+  right: 15.3%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-menu-bag-2 {
+  right: 12.8%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-menu-bag-3 {
+  right: 10.3%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-menu-bag-4 {
+  right: 7.8%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-menu-bag-5 {
+  right: 5.3%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-menu-bag-6 {
+  right: 2.8%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-package-bag-7 {
+  right: 15.3%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-8 {
+  right: 12.8%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-9 {
+  right: 10.3%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-10 {
+  right: 7.8%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-11 {
+  right: 5.3%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-12 {
+  right: 2.8%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+.new-york-soul-page .effet-package-bag-13 {
+  right: -3%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-14 {
+  right: -5.5%;
+  bottom: 8%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-15 {
+  right: -3%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-16 {
+  right: -5.5%;
+  bottom: -19%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-happy-meal.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-17 {
+  right: -3%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+.new-york-soul-page .effet-package-bag-18 {
+  right: -5.5%;
+  bottom: -41%;
+  transform: scale(0.28);
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-package-connies.webp") center/contain no-repeat;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.new-york-soul-page #food-banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  min-height: 125px;
+  box-sizing: border-box;
+  padding: 40px 100px;
+  background: linear-gradient(
+    180deg,
+    #ff44007c 0%,
+    #ff44006f 10%,
+    #ff440067 100%
+  );
+  background-color: rgba(0, 0, 0, 0.962);
+  background-blend-mode: darken;
+  border-top: 2px solid #ff45004a;
+  border-bottom: 2px solid rgba(255, 69, 0, 0.29);
+}
+
+/* --- MENU D'ACTION --- */
+.new-york-soul-page #action-menu {
+  position: absolute;
+  top: 0px;
+  right: 0%;
+  display: flex;
+  gap: 10px;
+  background-color: black;
+  color: orangered;
+  font-weight: bold;
+  font-size: 12px;
+  border-bottom-left-radius: 5px;
+  z-index: 15;
+  align-items: center;
+  padding: 20px 20px;
+  border-bottom: 2px solid rgba(255, 68, 0, 0.645);
+  border-left: 2px solid rgba(255, 68, 0, 0.742);
+  border-top: 2px solid rgba(255, 68, 0, 0.659);
+
+  /* Caché pour l'animation initiale */
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    transform 0.8s ease-out,
+    opacity 0.8s ease-out;
+}
+
+.new-york-soul-page #action-menu p:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  line-height: 1.2;
+}
+
+.new-york-soul-page #action-menu p {
+  color: white;
+  font-weight: normal;
+}
+
+.new-york-soul-page #money-left {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-family: var(--font-rock), sans-serif;
+  color: rgb(0, 249, 166);
+  text-shadow: 0 0 10px rgb(0, 249, 166);
+  padding-top: 10px;
+}
+
+/* --- ÉCRAN D'ACCUEIL --- */
+.new-york-soul-page #welcome-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  padding: 0 10%;
+
+  /* Visibilité gérée par le JS */
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s 0.5s,
+    opacity 0.5s ease-out;
+}
+
+.new-york-soul-page #welcome-text {
+  font-family: var(--font-rock), sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(0, 249, 166);
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: -4px 4px 8px rgba(0, 249, 166, 0.548);
+  -webkit-text-stroke: 1px rgba(1, 102, 30, 0.548);
+  opacity: 0; /* Animé par JS */
+}
+
+.new-york-soul-page #enter-button {
+  color: orangered;
+  font-size: 18px;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 50px;
+  border: 2px solid orangered;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  opacity: 0; /* Animé par JS */
+}
+
+.new-york-soul-page #enter-button:hover {
+  background-color: orangered;
+  color: black;
+}
+
+.new-york-soul-page .effet-logo-welcome {
+  position: absolute;
+  left: 14%;
+  top: 50%;
+  height: 200px;
+  width: 200px;
+  background: url("/svg/quiz/new-york/banner-bottom-connies/connies-logo.webp") center / contain no-repeat;
+  z-index: -1;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* --- STYLE DU TOOLTIP (POP-UP) --- */
+.new-york-soul-page #food-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: rgb(0, 249, 166);
+  padding: 10px 15px;
+  border: 2px solid rgb(0, 249, 166);
+  border-radius: 5px;
+  font-family: var(--font-poiret), sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  pointer-events: none; /* Ne bloque pas la souris */
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.2s ease-in-out;
+  box-shadow: 0 0 15px rgba(0, 249, 166, 0.3);
+}
+
+.new-york-soul-page #food-tooltip span {
+  color: orangered;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.new-york-soul-page #food-tooltip small {
+  display: block;
+  color: #ffffff;
+  font-size: 8px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+
+
+/* ================================================== */
+/* KEYFRAMES POUR L'ANIMATION SOUL FOOD */
+/* ================================================== */
+
+/* --- Animations de base --- */
+@keyframes ny-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ny-fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* --- Séquence d'accueil --- */
+
+/* Animation du logo (Défloutage + Zoom) */
+@keyframes ny-blurThenZoom {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0.5;
+    filter: blur(0px);
+    transform: translate(-50%, -50%) scale(5);
+  }
+}
+
+/* Animation du texte (Apparition douce) */
+@keyframes ny-blurOutFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Animation du bouton et du menu (Glissement depuis la droite) */
+@keyframes ny-slideInFromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* --- Effets du restaurant --- */
+
+/* Animation de l'argent restant (Battement de cœur) */
+@keyframes ny-heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ny-shake-error {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* ......................................H2 BACKGROUND BANNIERE 2 */
+
+.new-york-soul-page .banner-categories h2.play,
+.new-york-soul-page .banner-legal h2.play {
+  animation: ny-follow-car-smooth 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.new-york-soul-page .banner-bar {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.new-york-soul-page .banner-bar i {
+  font-size: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  will-change: transform, opacity;
+}
+
+.new-york-soul-page .banner-bar.play i {
+  animation: ny-fade-left 1.5s ease forwards;
+}
+
+.new-york-soul-page .banner-bar.play i:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.new-york-soul-page .banner-bar.play i:nth-child(2) {
+  animation-delay: 1.1s;
+}
+.new-york-soul-page .banner-bar.play i:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+/* ......................................................ICONES */
+
+.new-york-soul-page .section-banner .fa-rss {
+  color: #ff440093;
+}
+.new-york-soul-page .section-banner .fa-record-vinyl {
+  color: #ff440093;
+}
+.new-york-soul-page .section-banner .fa-music {
+  color: #ff440093;
+}
+
+
+@keyframes ny-follow-car-smooth {
+  0% {
+    transform: translateX(-260px);
+    opacity: 0;
+  }
+
+  25% {
+  }
+
+  85% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ................................................FADE IN LEFT  */
+
+@keyframes ny-fade-left {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

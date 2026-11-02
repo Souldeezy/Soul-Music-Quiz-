@@ -1,0 +1,150 @@
+.home-categories { width: 100%; background: rgba(0, 0, 0, .44); }
+.home-categories-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 30px; padding: 150px max(6vw, 70px); background: rgba(0, 0, 0, .45) url("/svg/common/effet-vinyl.svg") center / 5%; background-blend-mode: darken; background-attachment: fixed; }
+.home-category-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 2px solid rgba(255, 255, 255, .6); border-radius: 10px; background: #000; box-shadow: 0 0 10px rgba(255, 255, 255, .31); color: inherit; text-decoration: none; cursor: pointer; transition: box-shadow .4s ease; }
+.home-category-card:hover { box-shadow: 0 0 20px orangered; }
+.home-category-image { display: block; width: 100%; height: 200px; object-fit: cover; opacity: .5; transition: opacity .4s ease; }
+.home-category-card:hover .home-category-image { opacity: 1; }
+.home-category-card h3 { display: flex; min-height: 46px; align-items: center; justify-content: center; margin: 0; padding: 10px; border-block: 1px solid rgba(255, 255, 255, .6); color: whitesmoke; font-size: 18px; letter-spacing: 5px; text-transform: uppercase; }
+.home-category-card p { flex: 1; margin: 0; padding: 18px; border-bottom: 1px solid rgba(255, 255, 255, .6); color: whitesmoke; font-size: 18px; line-height: 1.6; text-align: center; }
+.home-category-card strong { color: orangered; }
+.home-category-cta { padding: 15px; color: whitesmoke; font-size: 17px; font-weight: 700; text-align: center; opacity: 1; transition: opacity .4s ease, color .2s ease; }
+.home-category-card:hover .home-category-cta, .home-category-card:focus-visible .home-category-cta { color: rgb(48, 255, 169); opacity: 1; }
+.home-category-card:focus-visible { outline: 2px solid rgb(48, 255, 169); outline-offset: 4px; }
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-categories-grid { gap: clamp(16px, 2vw, 26px); padding: clamp(80px, 10vw, 125px) clamp(24px, 5vw, 70px); }
+  .home-category-image { height: clamp(150px, 16vw, 200px); }
+  .home-category-card h3 { font-size: clamp(16px, 1.6vw, 18px); letter-spacing: 3px; }
+  .home-category-card p { padding: clamp(12px, 1.5vw, 18px); font-size: clamp(15px, 1.55vw, 18px); }
+  .home-category-cta { font-size: 16px; opacity: 1; }
+}
+
+.home-category-card p { text-wrap: pretty; overflow-wrap: break-word; }
+@media (min-width: 1440px) {
+  .home-categories-grid { padding-inline: max(6vw, calc((100% - 1400px) / 2)); }
+  .home-category-card {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    transition: transform .3s ease, box-shadow .4s ease;
+  }
+  .home-category-card > * { backface-visibility: hidden; }
+  .home-category-card:hover { transform: translate3d(0, -5px, 0); }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .home-categories-grid {
+    gap: 44px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 210px;
+    padding-bottom: 210px;
+  }
+  .home-category-image { height: 320px; }
+  .home-category-card h3 { min-height: 72px; padding: 16px; font-size: 28px; }
+  .home-category-card p { padding: 32px; font-size: 28px; line-height: 1.6; }
+  .home-category-cta { padding: 24px; font-size: 25px; }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .home-categories-grid { gap: 55px; padding: 240px 120px; }
+  .home-category-image { height: 380px; }
+  .home-category-card h3 { min-height: 86px; padding: 20px; font-size: 34px; }
+  .home-category-card p { padding: 40px; font-size: 34px; }
+  .home-category-cta { padding: 28px; font-size: 30px; }
+}
+
+@media (min-width: 1280px) and (max-width: 1439.98px) {
+  .home-category-card {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    transition: transform .3s ease, box-shadow .4s ease;
+  }
+  .home-category-card > * { backface-visibility: hidden; }
+  .home-category-card:hover { transform: translate3d(0, -5px, 0); }
+}
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .home-category-card p { font-size: clamp(16px, 1.55vw, 18px); }
+}
+@media (max-width: 767.98px) {
+  .home-category-card { width: min(100%, 460px); justify-self: center; }
+  .home-category-card p { font-size: clamp(16px, 4.5vw, 18px); }
+}
+
+@media (max-width: 767.98px) {
+  .home-categories-grid { grid-template-columns: 1fr; gap: 28px; padding: 70px clamp(16px, 6vw, 38px); background-size: 12%; background-attachment: scroll; }
+  .home-category-image { height: clamp(165px, 52vw, 245px); opacity: .7; }
+  .home-category-card h3 { font-size: 17px; letter-spacing: 3px; }
+  .home-category-card p { padding: 16px; font-size: clamp(16px, 4.5vw, 18px); line-height: 1.55; }
+  .home-category-cta { font-size: 16px; opacity: 1; }
+}
+
+@media (max-width: 375.98px) {
+  .home-categories-grid {
+    gap: 34px;
+    padding-inline: 20px;
+  }
+
+  .home-category-card {
+    width: min(100%, 260px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: none;
+  }
+
+  .home-category-image {
+    height: 145px;
+  }
+
+  .home-category-card h3 {
+    min-height: 40px;
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  .home-category-card p {
+    padding: 12px 14px;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: justify;
+  }
+
+  .home-category-cta {
+    padding: 11px;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 320.01px) and (max-width: 375.98px) {
+  .home-category-card { width: min(100%, 310px); }
+  .home-category-card:hover { box-shadow: none; }
+  .home-category-image { height: 165px; }
+}
+
+/* Sur desktop, la carte active reste nette tandis que les voisines se floutent. */
+@media (min-width: 1280px) {
+  .home-category-card {
+    transition: transform .3s ease, opacity .28s ease, filter .28s ease, box-shadow .28s ease;
+  }
+
+  .home-category-card:hover { transform: translate3d(0, -8px, 0); }
+
+  .home-categories-grid:has(.home-category-card:is(:hover, :focus-visible))
+    .home-category-card:not(:is(:hover, :focus-visible)) {
+    opacity: 1;
+    filter: blur(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 1280px) {
+  .home-category-card { transition: none; }
+}
+
+/* Desktop: garder le vinyle comme texture d'ambiance, sans qu'il concurrence les cartes. */
+@media (min-width: 1280px) {
+  .home-categories-grid {
+    background-color: rgba(0, 0, 0, .62);
+    background-size: 8%;
+  }
+}

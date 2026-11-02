@@ -1,0 +1,2 @@
+.hero.hero {background-image:url("/images/quiz/detroit/hero-detroit.webp");}
+.cta:global(.next-step-section):global(.california-soul-cta) {background-image:url("/images/quiz/detroit/cta-detroit.webp");background-position:center;}

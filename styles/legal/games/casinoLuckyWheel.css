@@ -1,0 +1,543 @@
+/* LUCKY WHEEL BLUEPRINT.............................................................................................. */
+
+#blueprint-luckyWheel {
+  display: none;
+  opacity: 0;
+}
+
+/* LUCKY WHEEL SCOREBOARD............................................................................................. */
+
+.casino-lw-scoreboard {
+  position: absolute;
+  top: 0;
+  left: 22%;
+  width: 200px;
+  height: 100%;
+  background: rgb(2, 2, 2);
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.lw-score-title {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: gold;
+  text-transform: uppercase;
+}
+
+.lw-score-row {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.lw-score-row:last-child {
+  border-bottom: none;
+}
+
+.lw-gain-label {
+  position: relative;
+  padding-left: 16px;
+}
+
+.lw-gain-score {
+  font-family: var(--font-rock), sans-serif;
+  font-size: 7px;
+  color: rgb(0, 249, 166);
+  letter-spacing: 2px;
+}
+
+/* SCOREBOARD COLOR LEGEND............................................................................................ */
+
+.lw-score-row:nth-child(2) .lw-gain-label::before,
+.lw-score-row:nth-child(3) .lw-gain-label::before,
+.lw-score-row:nth-child(4) .lw-gain-label::before,
+.lw-score-row:nth-child(5) .lw-gain-label::before,
+.lw-score-row:nth-child(6) .lw-gain-label::before,
+.lw-score-row:nth-child(7) .lw-gain-label::before,
+.lw-score-row:nth-child(8) .lw-gain-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.lw-score-row:nth-child(2) .lw-gain-label::before {
+  background: rgb(0, 249, 166);
+}
+
+.lw-score-row:nth-child(3) .lw-gain-label::before,
+.lw-score-row:nth-child(4) .lw-gain-label::before,
+.lw-score-row:nth-child(5) .lw-gain-label::before,
+.lw-score-row:nth-child(6) .lw-gain-label::before,
+.lw-score-row:nth-child(7) .lw-gain-label::before {
+  background: #f2e4c8;
+}
+
+.lw-score-row:nth-child(8) .lw-gain-label::before {
+  background: orangered;
+}
+
+/* LUCKY WHEEL GAME AREA.............................................................................................. */
+
+.casino-lw-game {
+  position: absolute;
+  left: 35.05%;
+  top: 0;
+  width: 790px;
+  height: 80.5%;
+  border-bottom: 1px solid orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.245);
+}
+
+/* TABLE.............................................................................................................. */
+
+.lw-table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* WHEEL CONTAINER.................................................................................................... */
+
+.lw-wheel-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* WHEEL.............................................................................................................. */
+
+.lw-wheel {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(0deg);
+  will-change: transform;
+  background: black;
+  box-shadow: 0 0 18px 1px rgba(255, 69, 0, 0.35);
+}
+
+/* SECTOR TEMPLATE.................................................................................................... */
+
+.lw-sector {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  clip-path: polygon(50% 50%, 50% 0%, 59.75% 0.96%);
+  transform-origin: 50% 50%;
+  background: #f2e4c8;
+}
+
+/* SECTOR COLORS...................................................................................................... */
+
+.lw-gain-0 {
+  background: orangered;
+}
+
+.lw-gain-20,
+.lw-gain-50,
+.lw-gain-100,
+.lw-gain-250 {
+  background: #f2e4c8;
+}
+
+.lw-gain-500 {
+  background: rgb(0, 249, 166);
+}
+
+.lw-gain-1000 {
+  background: #ffd500;
+}
+
+/* SECTOR POSITIONS — 11.25 DEG PAR SECTEUR........................................................................... */
+
+.lw-sector:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.lw-sector:nth-child(2) {
+  transform: rotate(11.25deg);
+}
+
+.lw-sector:nth-child(3) {
+  transform: rotate(22.5deg);
+}
+
+.lw-sector:nth-child(4) {
+  transform: rotate(33.75deg);
+}
+
+.lw-sector:nth-child(5) {
+  transform: rotate(45deg);
+}
+
+.lw-sector:nth-child(6) {
+  transform: rotate(56.25deg);
+}
+
+.lw-sector:nth-child(7) {
+  transform: rotate(67.5deg);
+}
+
+.lw-sector:nth-child(8) {
+  transform: rotate(78.75deg);
+}
+
+.lw-sector:nth-child(9) {
+  transform: rotate(90deg);
+}
+
+.lw-sector:nth-child(10) {
+  transform: rotate(101.25deg);
+}
+
+.lw-sector:nth-child(11) {
+  transform: rotate(112.5deg);
+}
+
+.lw-sector:nth-child(12) {
+  transform: rotate(123.75deg);
+}
+
+.lw-sector:nth-child(13) {
+  transform: rotate(135deg);
+}
+
+.lw-sector:nth-child(14) {
+  transform: rotate(146.25deg);
+}
+
+.lw-sector:nth-child(15) {
+  transform: rotate(157.5deg);
+}
+
+.lw-sector:nth-child(16) {
+  transform: rotate(168.75deg);
+}
+
+.lw-sector:nth-child(17) {
+  transform: rotate(180deg);
+}
+
+.lw-sector:nth-child(18) {
+  transform: rotate(191.25deg);
+}
+
+.lw-sector:nth-child(19) {
+  transform: rotate(202.5deg);
+}
+
+.lw-sector:nth-child(20) {
+  transform: rotate(213.75deg);
+}
+
+.lw-sector:nth-child(21) {
+  transform: rotate(225deg);
+}
+
+.lw-sector:nth-child(22) {
+  transform: rotate(236.25deg);
+}
+
+.lw-sector:nth-child(23) {
+  transform: rotate(247.5deg);
+}
+
+.lw-sector:nth-child(24) {
+  transform: rotate(258.75deg);
+}
+
+.lw-sector:nth-child(25) {
+  transform: rotate(270deg);
+}
+
+.lw-sector:nth-child(26) {
+  transform: rotate(281.25deg);
+}
+
+.lw-sector:nth-child(27) {
+  transform: rotate(292.5deg);
+}
+
+.lw-sector:nth-child(28) {
+  transform: rotate(303.75deg);
+}
+
+.lw-sector:nth-child(29) {
+  transform: rotate(315deg);
+}
+
+.lw-sector:nth-child(30) {
+  transform: rotate(326.25deg);
+}
+
+.lw-sector:nth-child(31) {
+  transform: rotate(337.5deg);
+}
+
+.lw-sector:nth-child(32) {
+  transform: rotate(348.75deg);
+}
+
+/* SECTOR VALUES...................................................................................................... */
+
+.lw-sector-value {
+  position: absolute;
+  top: 8px;
+  left: 54%;
+  transform: translateX(-50%) rotate(90deg);
+  transform-origin: center;
+
+  font-size: 5.5px;
+  font-weight: bold;
+  color: black;
+
+  z-index: 2;
+  padding: 2px 0px;
+}
+
+/* POINTER............................................................................................................ */
+
+.lw-pointer {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 22px solid rgb(19, 97, 174);
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* LUCKY WHEEL ACTIONS................................................................................................ */
+
+.casino-lw-actions {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 15px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* ACTION BUTTONS..................................................................................................... */
+
+.lw-action-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.lw-action-btn:hover {
+  color: #00f9a6;
+  box-shadow: 0px 0px 3px 0px orangered inset;
+}
+
+/* NOTIFICATIONS...................................................................................................... */
+
+.casino-lw-notifications {
+  position: absolute;
+  left: 35.05%;
+  bottom: 0;
+  width: 790px;
+  height: 19.5%;
+  background: rgba(41, 41, 41, 0.151);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.lw-notif-smq {
+  color: white;
+}
+
+.lw-notif-price,
+.lw-notif-gain {
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.lw-notif-price {
+  color: orangered;
+}
+
+.lw-notif-gain {
+  color: rgb(0, 249, 166);
+  margin-left: 10px;
+}
+
+.lw-notif-lose {
+  display: inline-block;
+  color: orangered;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-right: 8px;
+}
+
+/* ELEMENTS INVISIBLES AU DEPART...................................................................................... */
+
+.lw-gain-label,
+.lw-gain-score,
+.lw-action-btn {
+  opacity: 0;
+}
+
+/* LUCKY WHEEL CONTENT ANIMATIONS..................................................................................... */
+
+@keyframes lwLabelFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lwScoreSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lwButtonFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* LUCKY WHEEL KEYFRAMES.............................................................................................. */
+
+@keyframes lwSlideInLeft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lwSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% + 80px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes lwSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lwFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* LUCKY WHEEL NEW GAME............................................................................................... */
+
+@keyframes lwNewGameBlink {
+  0%,
+  100% {
+    color: white;
+    box-shadow: 0 0 3px 0 transparent inset;
+  }
+  50% {
+    color: #00f9a6;
+    box-shadow: 0 0 3px 0 orangered inset;
+  }
+}
+
+.lw-action-btn.blink {
+  color: #00f9a6;
+  box-shadow: 0 0 3px 0 orangered inset;
+  animation: lwNewGameBlink 2s infinite;
+}

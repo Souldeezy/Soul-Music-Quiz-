@@ -1,0 +1,73 @@
+/* MAP MALL........................................................................................................... */
+
+.effet-map-mall {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  width: 82%;
+  height: 95%;
+  background: url("/svg/legal/banner-bottom-nyc-games/mall/common/mall-hub.png")
+    center / cover no-repeat;
+  z-index: 0;
+}
+
+.effet-map-trait {
+  position: absolute;
+  bottom: 0;
+  left: 18.5%;
+  width: 10px;
+  height: 95%;
+  background-color: rgb(0, 0, 0);
+}
+
+/* BOUTIQUES — ZONES CLIQUABLES SEQ2.................................................................................. */
+
+.effet-mall-shop-vinyls,
+.effet-mall-shop-books-movies,
+.effet-mall-shop-audio,
+.effet-mall-shop-fashion {
+  position: absolute;
+  top: 13%;
+  height: 185px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.307);
+  color: rgba(26, 26, 26, 0.611);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.effet-mall-shop-vinyls {
+  left: 22.7%;
+  width: 213px;
+}
+
+.effet-mall-shop-books-movies {
+  left: 40.5%;
+  width: 213px;
+}
+
+.effet-mall-shop-audio {
+  left: 58.3%;
+  width: 187px;
+  text-align: center;
+}
+
+.effet-mall-shop-fashion {
+  left: 74%;
+  width: 350px;
+}
+
+/* HOVER.............................................................................................................. */
+
+.effet-mall-shop-vinyls:hover,
+.effet-mall-shop-books-movies:hover,
+.effet-mall-shop-audio:hover,
+.effet-mall-shop-fashion:hover {
+  color: black;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.279);
+  transition: 0.2s ease-in-out;
+}

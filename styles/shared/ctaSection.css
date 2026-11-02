@@ -1,0 +1,301 @@
+/* SECTION CTA........................................................................................................ */
+
+.next-step-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 100px 10%;
+  overflow-x: clip;
+  background: url("/images/legal/common/cta-legal-studio-recording.webp") center / cover no-repeat fixed;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-blend-mode: darken;
+}
+
+/* NAVIGATION......................................................................................................... */
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-container h2 {
+  color: rgba(255, 68, 0, 0.699);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.cta-container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin-top: 70px;
+  padding: 0;
+}
+
+.cta-container ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  box-shadow: 0 0 5px 0 transparent;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@media (min-width: 1440px) {
+  .cta-container ul li a:hover,
+  .cta-container ul li a:focus-visible {
+    color: rgb(0, 249, 166);
+    box-shadow: 0 0 5px 0 orangered;
+    transform: scale(1.1);
+  }
+
+  /* Prevent the neighbouring paragraph from flickering when the CTA link
+     is transformed on the artists and news menu pages. */
+  main.artistes-page .next-step-section .cta-container ul li a:hover,
+  main.artistes-page .next-step-section .cta-container ul li a:focus-visible,
+  main.news-page .next-step-section .cta-container ul li a:hover,
+  main.news-page .next-step-section .cta-container ul li a:focus-visible {
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .next-step-section.artist-template-cta .cta-container { align-items: flex-start; }
+  .next-step-section.artist-template-cta .cta-container h2 { width: 100%; margin: 0; text-align: left; }
+  .next-step-section.artist-template-cta .cta-container ul { align-items: flex-start; }
+  .next-step-section.artist-template-cta .cta-container ul li a { padding-left: 0; }
+}
+
+/* PRÉSENTATION....................................................................................................... */
+
+.cta-para-right {
+  width: 60%;
+  max-width: 1000px;
+  align-self: center;
+  color: rgba(255, 255, 255, 0.916);
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  opacity: 0;
+  transform: translateX(45px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Le CTA California Soul reprend l'image exacte du CTA vanilla. */
+.next-step-section.california-soul-cta {
+  background-image: url("/images/quiz/california-soul/cta-california-soul.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.759);
+  background-blend-mode: darken;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Typographie du CTA California Soul identique au CTA vanilla. */
+.next-step-section.california-soul-cta .cta-para-right {
+  max-width: none;
+  line-height: 1.8;
+  letter-spacing: 3px;
+}
+
+.cta-para-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cta-para-right strong {
+  color: orangered;
+}
+
+.ligne-separation-para {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  background-color: rgba(139, 37, 0, 0.4);
+}
+
+@media (min-width: 2200px) {
+  .next-step-section {
+    display: grid;
+    grid-template-columns: minmax(285px, 360px) minmax(0, 1000px);
+    justify-content: center;
+    align-items: center;
+    column-gap: clamp(160px, 8vw, 220px);
+  }
+
+  .cta-container {
+    width: max-content;
+    max-width: 100%;
+    align-items: flex-start;
+    justify-self: center;
+  }
+
+  .cta-container h2 {
+    width: 100%;
+    margin: 0;
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .cta-container ul {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .cta-container ul li a { font-weight: 400; }
+
+  .cta-para-right { width: 100%; }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .next-step-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .next-step-section .cta-container h2 { font-size: 27px; }
+  .next-step-section .cta-container ul li a { font-size: 26px; }
+  .next-step-section .cta-para-right { font-size: 31px; }
+  .next-step-section.california-soul-cta .cta-container { align-self: center; }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .next-step-section {
+    grid-template-columns: minmax(520px, 620px) minmax(0, 1100px);
+    column-gap: 300px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  .cta-container ul li a { white-space: nowrap; }
+  .cta-container h2 { font-size: 34px; }
+  .cta-container ul li a { font-size: 33px; }
+  .cta-para-right { font-size: 38px; }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .next-step-section {
+    display: grid;
+    grid-template-columns: minmax(220px, 32%) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(28px, 6vw, 84px);
+    padding: clamp(56px, 5vw, 72px) 7%;
+  }
+
+  .next-step-section > * { min-width: 0; }
+
+  .cta-container {
+    width: max-content;
+    max-width: 100%;
+    align-items: flex-start;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .cta-container h2 {
+    width: 100%;
+    margin: 0;
+    font-size: clamp(17px, 1.5vw, 20px);
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .cta-container ul {
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+    gap: clamp(28px, 3vw, 44px);
+    margin-top: clamp(32px, 3.5vw, 48px);
+  }
+
+  .cta-container ul li a { font-weight: 400; }
+
+  .cta-para-right {
+    width: 100%;
+    font-size: clamp(17px, 1.35vw, 19px);
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .next-step-section { padding-top: 66px; padding-bottom: 66px; }
+  .cta-container h2 { font-size: 18px; }
+  .cta-container ul li a { font-size: 16px; }
+  .cta-para-right { font-size: 18px; }
+}
+
+@media (min-width: 1280px) and (max-width: 1365.98px) {
+  .next-step-section {
+    min-height: 676px;
+  }
+
+  .cta-container h2 { font-size: 21px; }
+  .cta-container ul li a { font-size: 18px; }
+  .cta-para-right { font-size: 20px; line-height: 1.9; }
+}
+
+@media (min-width: 1366px) and (max-width: 1399.98px) {
+  .next-step-section { padding-top: 80px; padding-bottom: 80px; }
+  .cta-container h2 { font-size: 21px; }
+  .cta-container ul li a { font-size: 16px; }
+  .cta-para-right { font-size: 20px; }
+}
+
+@media (max-width: 767.98px) {
+  .next-step-section { flex-direction: column; gap: clamp(28px, 8vw, 38px); padding: 20px clamp(16px, 5vw, 20px); }
+  .next-step-section.california-soul-cta {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, .84);
+  }
+  .cta-container, .cta-para-right { width: 100%; }
+  .cta-para-right { order: 1; text-align: left; hyphens: none; overflow-wrap: normal; word-break: normal; }
+  .cta-container { order: 2; }
+  .cta-container h2 { font-size: clamp(17px, 5vw, 19px); text-align: center; }
+  .cta-container ul { gap: clamp(26px, 7vw, 34px); margin-top: clamp(18px, 6vw, 24px); }
+  .cta-container ul li a { font-size: clamp(14px, 4vw, 16px); letter-spacing: 1px; }
+  .cta-para-right { font-size: clamp(13px, 3.8vw, 16px); line-height: 1.45; letter-spacing: 0.25px; }
+  .next-step-section.california-soul-cta .cta-para-right { line-height: 1.45; }
+}
+
+@media (min-width: 321px) and (max-width: 375.98px) {
+  .next-step-section {
+    padding-top: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+  .next-step-section.california-soul-cta {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .next-step-section.california-soul-cta .cta-para-right {
+    line-height: 1.45;
+  }
+}
+
+/* Les liens CTA restent sans effet de survol sur ces deux grands breakpoints. */
+@media (min-width: 1880px) and (max-width: 1960px),
+       (min-width: 2500px) and (max-width: 2600px) {
+  .next-step-section .cta-container ul li a:hover {
+    color: white;
+    box-shadow: 0 0 5px 0 transparent;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,124 @@
+/* IMPORTS - CSS PARTAGÉS ........................................................................................... */
+
+@import "../styles/shared/keyframes.css";
+@import "../styles/shared/layout.css";
+@import "../styles/shared/header.css";
+@import "../styles/shared/footer.css";
+@import "../styles/shared/banner.css";
+@import "../styles/shared/ctaSection.css";
+
+/* RESET ET RÉGLAGES GÉNÉRAUX ....................................................................................... */
+
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  scrollbar-gutter: stable;
+  scroll-behavior: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.55) #0e0e0e;
+  background: #0e0e0e;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: var(--font-poiret), sans-serif;
+  background: #0e0e0e;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Keep the Quiz page within the viewport at every breakpoint. Its carousel
+   arrows and decorative layers otherwise enlarge the document on small screens. */
+main.quiz-page {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.artist-detail-enter {
+  opacity: 0;
+  animation: artist-detail-fade-in .35s ease-out forwards;
+}
+
+body:has(.artist-detail-enter) { background: #000; }
+
+@keyframes artist-detail-fade-in {
+  to { opacity: 1; }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #0e0e0e;
+}
+
+::-webkit-scrollbar-track { background: #0e0e0e; }
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid #0e0e0e;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 767.98px) {
+  main > section,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+}
+
+#site-contact {
+  scroll-margin-top: 150px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .artist-detail-enter { animation: none; opacity: 1; }
+
+  .site-header,
+  .main-nav ul,
+  .cta-nav,
+  .hero-description,
+  .cta-para-right {
+    transition: none;
+  }
+
+  .hero-logo-container,
+  .legal-banner-placeholder p {
+    animation: none;
+  }
+
+  .hero-description,
+  .cta-para-right {
+    opacity: 1;
+    transform: none;
+  }
+
+  .legal-banner-placeholder p { opacity: 1; }
+}

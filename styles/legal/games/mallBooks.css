@@ -1,0 +1,142 @@
+/* SEQ3 BOOKS......................................................................................................... */
+
+#seq3-books {
+  left: 7%;
+  width: 80%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  opacity: 0;
+}
+
+/* CAROUSEL........................................................................................................... */
+
+.books-carousel-container {
+  width: 100%;
+  height: 86%;
+  display: flex;
+  align-items: center;
+}
+
+.books-carousel {
+  width: 84%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: rgba(179, 178, 178, 0.27);
+  border-radius: 8px;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.books-carousel:active {
+  cursor: grabbing;
+}
+
+/* CAROUSEL BUTTONS................................................................................................... */
+
+.books-btn-prev,
+.books-btn-next {
+  width: 8%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: orangered;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.books-arrow-label {
+  margin-top: 6px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.books-btn-prev:hover .books-arrow-label,
+.books-btn-next:hover .books-arrow-label {
+  color: rgb(0, 249, 166);
+}
+
+.books-btn-prev:focus .books-arrow-label,
+.books-btn-next:focus .books-arrow-label { color: #fff; }
+.books-btn-prev:focus:hover .books-arrow-label,
+.books-btn-next:focus:hover .books-arrow-label { color: #fff !important; }
+
+/* DOTS............................................................................................................... */
+
+.books-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 5px 0 10px;
+}
+
+.books-dot {
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.4);
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.books-dot.active {
+  background: rgb(0, 249, 166);
+}
+
+/* Accessibility: keep pagination dots comfortably clickable. */
+.books-dots { gap: 16px; }
+.books-dot {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+.books-dot::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .4);
+}
+.books-dot.active { background: transparent; }
+.books-dot.active::after { background: rgb(0, 249, 166); }
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .books-dots { gap: 18px; }
+  .books-dot { width: 44px; height: 44px; }
+  .books-dot::after { width: 20px; height: 20px; }
+}
+
+.books-dot:focus-visible {
+  outline: 2px solid rgb(0, 249, 166);
+  outline-offset: 3px;
+}
+
+@media (min-width: 1440px) {
+  #seq3-books { justify-content: center; padding-top: 0; }
+  .books-dots { display: none !important; }
+}

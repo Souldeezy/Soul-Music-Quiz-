@@ -1,0 +1,677 @@
+/* TETRIS GAME BLUEPRINT.............................................................................................. */
+
+#blueprint-tetris {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+}
+
+/* TETRIS SCOREBOARD.................................................................................................. */
+
+.coney-tetris-scoreboard {
+  position: absolute;
+  top: 0;
+  left: 22%;
+  width: 200px;
+  height: 100%;
+  background: rgb(2, 2, 2);
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+  z-index: 1;
+  opacity: 0;
+}
+
+.tetris-score-title {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: gold;
+  text-transform: uppercase;
+}
+
+.tetris-score-row {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.tetris-score-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.tetris-score-label {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  opacity: 0;
+}
+
+.tetris-score-detail {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.863);
+  margin-left: 23px;
+  letter-spacing: 1px;
+  opacity: 0;
+  font-style: italic;
+}
+
+.tetris-score-value {
+  min-width: 55px;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 8px;
+  color: rgb(0, 249, 166);
+  letter-spacing: 1px;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* TETRIS GAME AREA................................................................................................... */
+
+.coney-tetris-game {
+  position: absolute;
+  left: 35.05%;
+  top: 0;
+  width: 790px;
+  height: 80.5%;
+  border-bottom: 1px solid orangered;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.245);
+  z-index: 0;
+  opacity: 0;
+}
+
+/* TETRIS WRAPPER..................................................................................................... */
+
+#tetris-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  box-sizing: border-box;
+  font-family: var(--font-poiret), sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#tetris-wrapper.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* NEXT PIECE......................................................................................................... */
+
+#tetris-next-block {
+  width: 55px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 69, 0, 0.5);
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 0px rgba(255, 68, 0, 0.299);
+  box-sizing: border-box;
+}
+
+.t-panel-label {
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: orangered;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#t-next-canvas {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: transparent;
+}
+
+/* TETRIS BOARD....................................................................................................... */
+
+#tetris-board-container {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  flex-shrink: 0;
+  background: black;
+  border-left: 2px solid rgba(255, 69, 0, 0.8);
+  border-right: 2px solid rgba(255, 69, 0, 0.8);
+  border-top: none;
+  border-bottom: none;
+  box-shadow:
+    0 0 18px rgba(255, 69, 0, 0.3),
+    inset 0 0 18px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#tetris-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+#tetris-ghost-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+/* LINE NOTIFICATION.................................................................................................. */
+
+#t-line-notif {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgb(0, 249, 166);
+  text-shadow: 0 0 15px rgba(0, 249, 166, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 30;
+  white-space: nowrap;
+}
+
+#t-line-notif.flash {
+  animation: tetrisLineFlash 0.7s ease forwards;
+}
+
+/* TETRIS GAME OVER................................................................................................... */
+
+#tetris-game-over {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  transition: opacity 0.6s ease;
+}
+
+#tetris-game-over.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#tetris-go-title {
+  width: 100%;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0 12px white;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+#tetris-game-over.show #tetris-go-title {
+  animation:
+    tetrisGameOverTitleFade 1.5s forwards,
+    tetrisGameOverBlink 3s 1.5s infinite;
+}
+
+#tetris-go-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: white;
+  white-space: nowrap;
+}
+
+#tetris-go-score div:first-child {
+  color: white;
+}
+
+#tetris-go-score div:last-child {
+  margin-top: 0;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 7px;
+  color: rgb(0, 249, 166);
+  letter-spacing: 1px;
+}
+
+.tetris-notif-game-over {
+  color: orangered;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-right: 12px;
+}
+
+.tetris-notif-label {
+  color: white;
+}
+
+.tetris-notif-player {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.tetris-notif-slash {
+  color: white;
+  margin: 0 10px;
+}
+
+.tetris-notif-final-score {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 5px;
+  letter-spacing: 2px;
+}
+
+/* TETRIS ACTIONS..................................................................................................... */
+
+.coney-tetris-actions {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  background: black;
+  border-left: 1px solid orangered;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* TETRIS LIVE STATS.................................................................................................. */
+
+.tetris-live-stats {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 0;
+  transform: translateY(8px);
+}
+
+.tetris-live-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tetris-live-label {
+  width: 70px;
+  min-width: 70px;
+  max-width: 70px;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.tetris-live-value {
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 9px;
+  color: rgb(0, 249, 166);
+  text-align: right;
+  letter-spacing: 2px;
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+
+.tetris-live-time {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  color: white;
+}
+
+/* TETRIS ACTION BUTTON............................................................................................... */
+
+.tetris-action-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 transparent;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.tetris-action-btn:hover {
+  color: rgb(0, 249, 166);
+  box-shadow: 0 0 3px 0 orangered inset;
+}
+
+/* TETRIS NOTIFICATIONS............................................................................................... */
+
+.coney-tetris-notifications {
+  position: absolute;
+  left: 35.05%;
+  bottom: 0;
+  width: 790px;
+  height: 19.5%;
+  background: rgba(41, 41, 41, 0.151);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 0;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* TETRIS NOTIFICATION CONTENT........................................................................................ */
+
+.tetris-notif-smq {
+  color: white;
+  font-weight: bold;
+}
+
+.tetris-notif-price {
+  color: orangered;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tetris-notif-score {
+  color: white;
+  font-weight: bold;
+}
+
+.tetris-notif-result {
+  color: rgb(0, 249, 166);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tetris-notif-game-over {
+  color: orangered;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tetris-notif-player {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.tetris-notif-record {
+  display: inline-block;
+  margin-left: 28px;
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  color: orangered;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(35px);
+  animation:
+    tetrisRecordSlide 0.8s ease 0.4s forwards,
+    tetrisRecordBlink 5s ease-in-out 2.2s infinite;
+}
+
+/* INTRO ELEMENTS INVISIBLES.......................................................................................... */
+
+.tetris-score-label,
+.tetris-score-detail,
+.tetris-score-value,
+.tetris-action-btn {
+  opacity: 0;
+}
+
+/* TETRIS NEW GAME.................................................................................................... */
+
+.tetris-action-btn.blink {
+  color: rgb(0, 249, 166);
+  box-shadow: 0 0 3px 0 orangered inset;
+  animation: tetrisNewGameBlink 2s infinite;
+}
+
+.tetris-notif-controls {
+  display: inline-block;
+  margin: 0 8px;
+  color: orangered;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.tetris-action-btn:focus,
+.tetris-action-btn:focus-visible,
+.tetris-action-btn:active {
+  outline: none;
+  border-color: transparent;
+}
+
+.tetris-action-btn {
+  outline: none;
+}
+
+/* KEYFRAMES.......................................................................................................... */
+
+@keyframes tetrisGameOverTitleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tetrisGameOverBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes tetrisSlideInLeft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tetrisSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% + 80px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tetrisSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tetrisFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tetrisLabelFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tetrisScoreSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tetrisButtonFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tetrisNewGameBlink {
+  0%,
+  100% {
+    color: white;
+    box-shadow: 0 0 3px 0 transparent inset;
+  }
+  50% {
+    color: rgb(0, 249, 166);
+    box-shadow: 0 0 3px 0 orangered inset;
+  }
+}
+
+@keyframes tetrisLineFlash {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes tetrisRecordSlide {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tetrisRecordBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

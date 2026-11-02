@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  viewBox="0 0 32 32"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none">
+
+  <!-- Glow écran -->
+  <defs>
+    <filter id="screenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Antenne gauche (plus courte) -->
+  <line
+    x1="16"
+    y1="8"
+    x2="11"
+    y2="3"
+    stroke="#000"
+    stroke-width="1.5"
+    stroke-linecap="round"/>
+
+  <!-- Antenne droite (plus longue) -->
+  <line
+    x1="16"
+    y1="8"
+    x2="22"
+    y2="1.5"
+    stroke="#000"
+    stroke-width="1.5"
+    stroke-linecap="round"/>
+
+  <!-- Cadre TV -->
+  <rect
+    x="0"
+    y="8"
+    width="32"
+    height="24"
+    rx="4"
+    fill="#000000e1"/>
+
+  <!-- Écran -->
+  <rect
+    x="3"
+    y="11"
+    width="26"
+    height="18"
+    rx="2"
+    fill="orangered"
+    filter="url(#screenGlow)"
+    opacity="0.85">
+
+    <animate
+      attributeName="opacity"
+      values="0.8;0.92;0.82"
+      dur="3.8s"
+      repeatCount="indefinite"/>
+  </rect>
+
+</svg>

@@ -1,0 +1,386 @@
+/* DICE GAME BLUEPRINT................................................................................................ */
+
+#blueprint-dice {
+  display: none;
+  opacity: 0;
+}
+
+/* DICE GAME SCOREBOARD............................................................................................... */
+
+.casino-dice-scoreboard {
+  position: absolute;
+  top: 0;
+  left: 22%;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: rgb(2, 2, 2);
+  border-left: 1px solid orangered;
+  border-right: 1px solid orangered;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.dice-score-title {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.dice-score-row {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 8px;
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.dice-score-row:last-child {
+  border-bottom: none;
+}
+
+.dice-score-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.dice-gain-label {
+  color: white;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.dice-combo-label {
+  margin-left: 5px;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.dice-gain-score {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+/* DICE GAME AREA..................................................................................................... */
+
+.casino-dice-game {
+  position: absolute;
+  top: 0;
+  left: 35.05%;
+  width: 790px;
+  height: 80.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: url("/images/legal/banner-bottom-nyc-games/casino/common/tapis-vert.png")
+    center / 100% no-repeat;
+  background-color: rgba(0, 0, 0, 0.245);
+  border-bottom: 1px solid orangered;
+  z-index: 0;
+}
+
+/* TABLE AND DICE CONTAINER........................................................................................... */
+
+.dice-table,
+.dice-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-container {
+  gap: 35px;
+}
+
+/* DICE IMAGES........................................................................................................ */
+
+.dice-img {
+  width: 75px;
+  height: 75px;
+  display: block;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.75);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  will-change: opacity, transform;
+}
+
+.dice-img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* DICE DISAPPEAR..................................................................................................... */
+
+.dice-img.dice-hide {
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+/* DICE APPEAR........................................................................................................ */
+
+.dice-img.dice-show {
+  animation: diceAppear 0.4s ease forwards;
+}
+
+/* DICE ACTIONS....................................................................................................... */
+
+.casino-dice-actions {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  box-sizing: border-box;
+  padding: 15px;
+  background: rgb(0, 0, 0);
+  border-left: 1px solid orangered;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ACTION BUTTONS..................................................................................................... */
+
+.dice-action-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 0 5px 0 transparent;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.dice-action-btn:hover {
+  color: #00f9a6;
+  box-shadow: 0 0 3px 0 orangered inset;
+}
+
+/* NOTIFICATIONS...................................................................................................... */
+
+.casino-dice-notifications {
+  position: absolute;
+  bottom: 0;
+  left: 35.05%;
+  width: 790px;
+  height: 19.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 41, 41, 0.151);
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  z-index: 0;
+}
+
+.dice-notif-smq {
+  color: white;
+}
+
+.dice-notif-price,
+.dice-notif-gain,
+.dice-notif-jackpot {
+  font-family: var(--font-rock), sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.dice-notif-price {
+  color: orangered;
+}
+
+.dice-notif-gain {
+  margin-left: 10px;
+  color: rgb(0, 249, 166);
+}
+
+.dice-notif-win,
+.dice-notif-lose {
+  display: inline-block;
+  color: orangered;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dice-notif-win {
+  margin-right: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.dice-notif-lose {
+  margin-right: 8px;
+  letter-spacing: 2px;
+}
+
+.dice-notif-jackpot {
+  margin-right: 12px;
+  color: rgb(0, 249, 166);
+  font-weight: bold;
+}
+
+/* ELEMENTS INVISIBLES AU DÉPART...................................................................................... */
+
+.dice-gain-label,
+.dice-combo-label,
+.dice-gain-score,
+.dice-action-btn {
+  opacity: 0;
+}
+
+/* DICE GAME CONTENT ANIMATIONS....................................................................................... */
+
+@keyframes diceLabelFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes diceScoreSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes diceButtonFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* DICE GAME KEYFRAMES................................................................................................ */
+
+@keyframes diceSlideInLeft {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes diceSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% + 80px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes diceSlideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes diceFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* DICE APPEAR........................................................................................................ */
+
+@keyframes diceAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* DICE NEW GAME...................................................................................................... */
+
+@keyframes diceNewGameBlink {
+  0%,
+  100% {
+    color: white;
+    box-shadow: 0 0 3px 0 transparent inset;
+  }
+
+  50% {
+    color: #00f9a6;
+    box-shadow: 0 0 3px 0 orangered inset;
+  }
+}
+
+.dice-action-btn.blink {
+  color: #00f9a6;
+  box-shadow: 0 0 3px 0 orangered inset;
+  animation: diceNewGameBlink 2s infinite;
+}

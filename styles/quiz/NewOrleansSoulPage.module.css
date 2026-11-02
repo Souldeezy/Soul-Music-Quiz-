@@ -1,0 +1,9 @@
+.hero.hero { background-image: url("/images/quiz/new-orleans/hero-new-orleans.webp"); }
+.cta:global(.next-step-section):global(.california-soul-cta) { background-image: url("/images/quiz/new-orleans/cta-new-orleans.webp"); background-position: center; }
+
+@media (min-width: 375px) and (max-width: 389px) {
+  .hero h1 {
+    width: 100%;
+    max-width: 340px;
+  }
+}

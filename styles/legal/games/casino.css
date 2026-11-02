@@ -1,0 +1,119 @@
+/* CASINO MAP......................................................................................................... */
+
+.effet-map-casino {
+  width: 120%;
+  height: 100%;
+  background: url("/svg/legal/banner-bottom-nyc-games/casino/common/casino-hub.png")
+    no-repeat;
+  background-position-x: 160%;
+  background-position-y: 46.5%;
+  background-size: 90%;
+}
+
+/* BEST SCORES CASINO................................................................................................. */
+
+.effet-casino-best-score-videoPoker,
+.effet-casino-best-score-slotMachine,
+.effet-casino-best-score-luckyWheel,
+.effet-casino-best-score-dice {
+  position: absolute;
+  top: 13.3%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: white;
+  font-size: 8px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+}
+
+.effet-casino-best-score-videoPoker {
+  top: 13.2%;
+  left: 21%;
+  width: 189px;
+}
+
+.effet-casino-best-score-slotMachine {
+  left: 37.5%;
+  width: 250px;
+}
+
+.effet-casino-best-score-luckyWheel {
+  left: 57.7%;
+  width: 200px;
+}
+
+.effet-casino-best-score-dice {
+  left: 74.75%;
+  width: 192px;
+}
+
+/* JEUX — ZONES CLIQUABLES SEQ2....................................................................................... */
+
+.effet-casino-game-videoPoker,
+.effet-casino-game-slotMachine,
+.effet-casino-game-luckyWheel,
+.effet-casino-game-dice,
+.effet-casino-vide {
+  position: absolute;
+  top: 37%;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 116, 77, 0.31);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: rgba(153, 155, 152, 0.736);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.effet-casino-game-videoPoker {
+  left: 21.4%;
+  width: 180px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.effet-casino-game-slotMachine {
+  left: 37.8%;
+  width: 243px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.effet-casino-game-luckyWheel {
+  top: 37.35%;
+  left: 57.9%;
+  width: 195px;
+}
+
+.effet-casino-game-dice {
+  left: 75%;
+  width: 183px;
+}
+
+.effet-casino-vide {
+  top: 37.3%;
+  left: 91.35%;
+  width: 183px;
+}
+
+/* HOVER.............................................................................................................. */
+
+.effet-casino-game-videoPoker:hover,
+.effet-casino-game-slotMachine:hover,
+.effet-casino-game-luckyWheel:hover,
+.effet-casino-game-dice:hover,
+.effet-casino-vide:hover {
+  color: rgb(4, 255, 4);
+  text-shadow: 0 0 10px rgba(166, 172, 170, 0.281);
+  transition: 0.2s ease-in-out;
+}

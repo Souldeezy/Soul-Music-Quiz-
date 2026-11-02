@@ -1,0 +1,230 @@
+/* SEQUENCE 2 — DESTINATION........................................................................................... */
+
+#mall-seq2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+#mall-seq2-nom {
+  position: absolute;
+  z-index: 20;
+  color: orangered;
+  font-family: var(--font-alfa), sans-serif;
+  font-style: italic;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+/* PLAYER INFORMATIONS................................................................................................ */
+
+#player-name-container,
+#player-money-container {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateX(-200px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+#player-name-container {
+  top: 50px;
+}
+
+#player-money-container {
+  top: 100px;
+}
+
+.player-label,
+.money-label {
+  color: white;
+  font-size: 12px;
+}
+
+.player-name,
+.player-money {
+  color: rgb(0, 249, 166);
+  font-family: var(--font-rock), sans-serif;
+}
+
+.player-name {
+  font-size: 17px;
+}
+
+.player-money {
+  font-size: 15px;
+}
+
+#player-name-container.slide-in,
+#player-money-container.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* EXIT BUTTON........................................................................................................ */
+
+#mall-sortir {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  width: 200px;
+  padding: 5px 20px;
+  border: 1px solid rgba(255, 69, 0, 0.3);
+  border-radius: 3px;
+  color: rgba(255, 69, 0, 0.6);
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#mall-sortir:hover {
+  background: orangered;
+  color: black;
+}
+
+/* START BUTTON....................................................................................................... */
+
+#start-game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  padding: 10px 20px;
+  background: black;
+  border: 1px solid orangered;
+  border-radius: 4px;
+  color: orangered;
+  font-family: var(--font-poiret), sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+#start-game.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#start-game:hover {
+  background: orangered;
+  color: black;
+}
+
+/* SEQUENCE CONTENT................................................................................................... */
+
+.seq2-content {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.best-score-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.best-name,
+.best-player {
+  margin-left: 5px;
+  color: white;
+  font-family: var(--font-rock), cursive;
+}
+
+.best-time {
+  margin-left: 5px;
+  color: #00ff90;
+  font-family: var(--font-poiret), cursive;
+}
+
+/* CONEY MAP.......................................................................................................... */
+
+.effet-map-coney {
+  width: 120%;
+  height: 100%;
+  background:
+    url("/svg/legal/banner-bottom-nyc-games/coney/common/coney-hub.png")
+    no-repeat;
+  background-position-x: 160%;
+  background-position-y: 76.5%;
+  background-size: 90%;
+}
+
+/* BEST SCORES SEQ2................................................................................................... */
+
+.effet-best-score-darts,
+.effet-best-score-tetris,
+.effet-best-score-memory,
+.effet-best-score-maze {
+  position: absolute;
+  top: 0;
+  width: 187px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  box-shadow: 0 0 10px 0 white;
+  font-size: 8px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+}
+
+.effet-best-score-darts {
+  left: 18.2%;
+}
+
+.effet-best-score-tetris {
+  left: 40%;
+}
+
+.effet-best-score-memory {
+  left: 56%;
+}
+
+.effet-best-score-maze {
+  left: 80.64%;
+  width: 240px;
+}

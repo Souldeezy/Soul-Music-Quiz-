@@ -1,0 +1,183 @@
+/* LEGAL CONTENT...................................................................................................... */
+
+.legal-content-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 50px 0;
+  background: #0b0806;
+}
+
+.legal-vinyl-decorations {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.legal-vinyl-disc {
+  position: absolute;
+  display: block;
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, .12);
+  -webkit-mask: url("/svg/news/vinyl-svgrepo-com.svg") center / contain no-repeat;
+  mask: url("/svg/news/vinyl-svgrepo-com.svg") center / contain no-repeat;
+}
+
+.legal-vinyl-disc:nth-child(1) { top: 2%; left: 6%; width: clamp(64px, 6vw, 110px); }
+.legal-vinyl-disc:nth-child(2) { top: 9%; right: 24%; width: clamp(110px, 11vw, 210px); }
+.legal-vinyl-disc:nth-child(3) { top: 18%; left: 32%; width: clamp(52px, 4vw, 78px); }
+.legal-vinyl-disc:nth-child(4) { top: 28%; right: 4%; width: clamp(88px, 7.5vw, 145px); }
+.legal-vinyl-disc:nth-child(5) { top: 37%; left: -3%; width: clamp(130px, 13vw, 250px); }
+.legal-vinyl-disc:nth-child(6) { top: 46%; right: 30%; width: clamp(58px, 5vw, 96px); }
+.legal-vinyl-disc:nth-child(7) { top: 55%; left: 24%; width: clamp(95px, 9vw, 175px); }
+.legal-vinyl-disc:nth-child(8) { top: 67%; right: -4%; width: clamp(54px, 4vw, 80px); }
+.legal-vinyl-disc:nth-child(9) { top: 76%; left: 34%; width: clamp(120px, 12vw, 230px); }
+.legal-vinyl-disc:nth-child(10) { top: 87%; right: 26%; width: clamp(50px, 3.5vw, 68px); }
+.legal-vinyl-disc:nth-child(11) { top: 96%; left: 2%; width: clamp(78px, 6.5vw, 125px); }
+
+.legal-content-section > :not(.legal-vinyl-decorations) {
+  position: relative;
+  z-index: 1;
+}
+
+/* COMMON STYLES...................................................................................................... */
+
+.legal-content-section h2,
+.legal-content-paragraph,
+.legal-content-section a {
+  width: 50%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* TITLES............................................................................................................. */
+
+.legal-content-section h2 {
+  margin: 0;
+  padding: 0 30px;
+  border-radius: 15px;
+  color: rgb(255, 68, 0);
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 88, 27, 0.745);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  letter-spacing: 3px;
+}
+
+/* PARAGRAPHS......................................................................................................... */
+
+.legal-content-paragraph {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.916);
+  font-size: 20px;
+  line-height: 1.6em;
+}
+
+/* LINKS.............................................................................................................. */
+
+.legal-content-section a {
+  color: rgb(55, 125, 255);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.mailto:hover {
+  color: rgb(48, 255, 169);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .legal-content-section { width: 100%; min-width: 0; padding: clamp(40px, 4vw, 50px) clamp(24px, 4vw, 56px); }
+  .legal-content-section h2,
+  .legal-content-paragraph,
+  .legal-content-section a { width: min(82%, 900px); max-width: 100%; }
+  .legal-content-section h2 { padding: 0 16px; font-size: clamp(20px, 1.6vw, 23px); }
+  .legal-content-paragraph {
+    margin-inline: auto;
+    font-size: clamp(17px, 1.35vw, 19px);
+    line-height: 1.6;
+    text-align: left;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .legal-content-paragraph a[href^="mailto:"],
+  .legal-content-paragraph a[href^="https://www.hostinger.com"] {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1365.98px) {
+  .legal-content-paragraph,
+  .legal-content-section a {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1880px) and (max-width: 1960px) {
+  .legal-content-section {
+    gap: 18px;
+    padding: 70px 0 90px;
+  }
+  .legal-content-section h2,
+  .legal-content-paragraph,
+  .legal-content-section a { width: 70%; max-width: 1400px; }
+  .legal-content-section h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .legal-content-paragraph,
+  .legal-content-section a { font-size: 29px; }
+  .legal-content-paragraph {
+    line-height: 1.6;
+    text-align: left;
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 2600px) {
+  .legal-content-section {
+    gap: 24px;
+    padding: 90px 0 110px;
+  }
+  .legal-content-section h2,
+  .legal-content-paragraph,
+  .legal-content-section a { width: min(75%, 1600px); max-width: 1600px; }
+  .legal-content-section h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+  .legal-content-paragraph,
+  .legal-content-section a { font-size: 35px; }
+  .legal-content-paragraph {
+    line-height: 1.55;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .legal-content-section { gap: clamp(6px, 2vw, 8px); width: 100%; padding: clamp(30px, 8vw, 36px) clamp(12px, 4vw, 20px); }
+  .legal-content-section h2, .legal-content-paragraph { width: min(94%, 560px); max-width: 100%; }
+  .legal-content-section h2 { margin-inline: auto; padding: 0 4px; font-size: clamp(15px, 4.4vw, 18px); line-height: 1.45; letter-spacing: clamp(1px, 0.4vw, 2px); text-align: center; }
+  .legal-content-paragraph { margin-inline: auto; font-size: clamp(13px, 3.8vw, 16px); line-height: 1.55; text-align: left; hyphens: none; overflow-wrap: normal; word-break: normal; }
+  .legal-content-section a { max-width: 100%; overflow-wrap: anywhere; }
+  .legal-content-paragraph a[href^="mailto:"] { display: block; width: 100%; margin-top: 4px; text-align: center; }
+  .legal-content-paragraph a[href^="https://www.hostinger.com"] { display: block; width: 100%; margin-top: 4px; text-align: center; }
+  #SMQ-editeur br + br,
+  #SMQ-hebergement br + br { display: none; }
+}

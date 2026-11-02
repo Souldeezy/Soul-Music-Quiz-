@@ -1,0 +1,155 @@
+/* MAP CONEY.......................................................................................................... */
+
+.effet-map-coney {
+  width: 120%;
+  height: 100%;
+  background: url("/svg/legal/banner-bottom-nyc-games/coney/common/coney-hub.png")
+    no-repeat;
+  background-position-x: 160%;
+  background-position-y: 80%;
+  background-size: 90%;
+  background-color: rgba(16, 0, 158, 0.186);
+  background-blend-mode: darken;
+}
+
+/* BEST SCORES CONEY.................................................................................................. */
+
+.effet-coney-best-score-darts,
+.effet-coney-best-score-tetris,
+.effet-coney-best-score-memory,
+.effet-coney-best-score-maze {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.819);
+  border-radius: 2px;
+  color: white;
+  font-size: 8px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease;
+}
+
+.effet-coney-best-score-darts {
+  left: 16.3%;
+  width: 225px;
+}
+
+.effet-coney-best-score-tetris {
+  left: 39.2%;
+  width: 202px;
+}
+
+.effet-coney-best-score-memory {
+  left: 55%;
+  width: 236px;
+}
+
+.effet-coney-best-score-maze {
+  left: 81%;
+  width: 283px;
+}
+
+/* RED BEST SCORES.................................................................................................... */
+
+.effet-coney-best-score-darts,
+.effet-coney-best-score-maze {
+  border: 2px solid rgba(253, 26, 26, 0.685);
+  border-top: none;
+  box-shadow: 0 0 20px 10px rgba(253, 26, 26, 0.244);
+}
+
+/* GREEN BEST SCORES.................................................................................................. */
+
+.effet-coney-best-score-tetris,
+.effet-coney-best-score-memory {
+  border: 2px solid rgba(0, 249, 166, 0.716);
+  border-top: none;
+  box-shadow: 0 0 20px 10px rgba(0, 249, 166, 0.225);
+}
+
+.effet-coney-best-score-memory {
+  border-color: rgba(0, 249, 166, 0.686);
+}
+
+/* JEUX — ZONES CLIQUABLES SEQ2....................................................................................... */
+
+.effet-coney-game-darts,
+.effet-coney-game-tetris,
+.effet-coney-game-memory,
+.effet-coney-game-maze {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.611);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 9999;
+}
+
+.effet-coney-game-darts,
+.effet-coney-game-maze {
+  background-color: rgba(6, 6, 6, 0.1);
+  letter-spacing: 5px;
+}
+
+.effet-coney-game-tetris,
+.effet-coney-game-memory {
+  width: 190px;
+  height: 40px;
+  letter-spacing: 3px;
+}
+
+/* DARTS.............................................................................................................. */
+
+.effet-coney-game-darts {
+  top: 17%;
+  left: 16.69%;
+  width: 209px;
+  height: 80px;
+}
+
+/* TETRIS............................................................................................................. */
+
+.effet-coney-game-tetris {
+  top: 36%;
+  left: 39.6%;
+}
+
+/* MEMORY............................................................................................................. */
+
+.effet-coney-game-memory {
+  top: 39.5%;
+  left: 56.7%;
+}
+
+/* MAZE............................................................................................................... */
+
+.effet-coney-game-maze {
+  top: 36%;
+  left: 81.7%;
+  width: 265px;
+  height: 70px;
+}
+
+/* HOVER.............................................................................................................. */
+
+.effet-coney-game-darts:hover,
+.effet-coney-game-maze:hover {
+  color: rgb(255, 48, 33);
+  text-shadow: 0 0 20px rgba(253, 0, 0, 0.278);
+  transition: 0.2s ease-in-out;
+}
+
+.effet-coney-game-tetris:hover,
+.effet-coney-game-memory:hover {
+  color: rgb(0, 68, 45);
+  text-shadow: 0 0 20px rgba(0, 249, 166, 0.145);
+  transition: 0.2s ease-in-out;
+}

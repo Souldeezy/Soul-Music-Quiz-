@@ -178,6 +178,7 @@
   .legal-content-section a { max-width: 100%; overflow-wrap: anywhere; }
   .legal-content-paragraph a[href^="mailto:"] { display: block; width: 100%; margin-top: 4px; text-align: center; }
   .legal-content-paragraph a[href^="https://www.hostinger.com"] { display: block; width: 100%; margin-top: 4px; text-align: center; }
+  #SMQ-hebergement a[href^="https://vercel.com"] { display: block; width: 100%; margin-top: 4px; text-align: center; }
   #SMQ-editeur br + br,
   #SMQ-hebergement br + br { display: none; }
 }

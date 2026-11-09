@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import { artistSlides } from "./artistsData";
 import { artistSlug } from "./artistSlug";
@@ -22,6 +22,7 @@ export default function ArtistsCarousel() {
   const suppressClickRef = useRef(false);
   const timersRef = useRef([]);
   const router = useRouter();
+  const pathname = usePathname();
   const [revealedIndex, setRevealedIndex] = useState(null);
   const [leavingArtist, setLeavingArtist] = useState(null);
   const togglePortrait = (index) => setRevealedIndex((current) => current === index ? null : index);
@@ -38,6 +39,7 @@ export default function ArtistsCarousel() {
   }, []);
 
   useLayoutEffect(() => {
+    if (pathname !== "/artistes") return;
     const requestedArtist = new URLSearchParams(window.location.search).get("returnArtist");
     if (!requestedArtist) return;
 
@@ -45,11 +47,22 @@ export default function ArtistsCarousel() {
     const track = trackRef.current;
     if (index < 0 || !track) return;
 
-    setRevealedIndex(index);
-    track.scrollTo({ left: index * track.clientWidth, behavior: "instant" });
-    document.getElementById("artists-index")?.scrollIntoView({ block: "start", behavior: "instant" });
-    window.history.replaceState(window.history.state, "", "/artistes#artists-index");
-  }, []);
+    let restoreFrame;
+    let attempts = 0;
+    const restoreArtist = () => {
+      if (!track.clientWidth && attempts++ < 4) {
+        restoreFrame = window.requestAnimationFrame(restoreArtist);
+        return;
+      }
+      if (!track.clientWidth) return;
+      setRevealedIndex(index);
+      track.scrollTo({ left: index * track.clientWidth, behavior: "instant" });
+      document.getElementById("artists-index")?.scrollIntoView({ block: "start", behavior: "instant" });
+      window.history.replaceState(window.history.state, "", "/artistes#artists-index");
+    };
+    restoreFrame = window.requestAnimationFrame(restoreArtist);
+    return () => window.cancelAnimationFrame(restoreFrame);
+  }, [pathname]);
 
   const goToSlide = (index) => {
     const track = trackRef.current;
@@ -128,8 +141,8 @@ export default function ArtistsCarousel() {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     try {
-      // Browser Back should return to the Artists page hero, not its index anchor.
-      window.history.replaceState(window.history.state, "", "/artistes");
+      const returnUrl = `/artistes?returnArtist=${artistSlug(artistSlides[index].name)}`;
+      window.history.replaceState(window.history.state, "", returnUrl);
     } catch {
       // Navigation still works if the current history entry cannot be normalized.
     }

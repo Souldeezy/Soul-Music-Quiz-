@@ -44,7 +44,7 @@ export default function SiteFooter() {
         <p>
           © 2026 <strong>SoulMusicQuiz</strong>. Édité avec passion
           par <strong>Deezy</strong>. Propulsé par{" "}
-          <strong>Netlify</strong>.
+          <strong>Vercel</strong>.
         </p>
       </div>
     </footer>

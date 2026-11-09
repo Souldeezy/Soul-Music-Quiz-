@@ -502,7 +502,7 @@
   opacity: 0.3;
   border-radius: inherit;
   transform: scale(1);
-  transition: transform .65s cubic-bezier(.19, 1, .22, 1);
+  transition: opacity .4s ease, transform .65s cubic-bezier(.19, 1, .22, 1);
 }
 
 .article-meta {
@@ -600,6 +600,8 @@
 }
 
 @media (max-width: 767.98px) {
+  .carousel-slide img { opacity: 1; }
+
   .article-index {
     grid-template-columns: 36px minmax(0, 1fr) 36px;
     width: 100%;
@@ -627,7 +629,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .carousel-slide:hover img { transform: scale(1.04); }
+  .carousel-slide:is(:hover, :focus-visible) img {
+    opacity: 1;
+    transform: scale(1.04);
+  }
 }
 
 .slide-content {
@@ -4431,7 +4436,7 @@
 .carousel-container .about-arrow,
 .carousel-container .about-dots,
 .carousel-container .article-counter {
-  transition: opacity .3s ease, visibility 0s linear .3s;
+  transition: opacity .3s ease, visibility 0s;
 }
 
 .carousel-container.is-restoring,
@@ -4447,6 +4452,36 @@
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  transition: opacity .3s ease, visibility 0s linear .3s;
+}
+
+/* Keep the News carousel card at the same height across every mobile width. */
+@media (max-width: 767.98px) {
+  .carousel-slide {
+    height: 320px;
+    min-height: 320px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-menu-quiz h1 { font-size: clamp(58px, 15vw, 110px); }
+}
+
+@media (max-width: 767.98px) {
+  .hero-menu-quiz .texte-hero {
+    font-weight: 400;
+    animation-duration: 2.8s;
+    animation-delay: 1.5s;
+  }
+
+  .hero-scroll-down {
+    bottom: 5.8%;
+    animation:
+      fade-in 1.8s ease-out 1.8s forwards,
+      clignoter 5s ease-in-out 3.6s infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4455,4 +4490,65 @@
   .carousel-container .article-counter {
     transition: none;
   }
+}
+
+/* Évite que l’état hover reste affiché après un toucher sur mobile. */
+@media (max-width: 767.98px) {
+  .about-arrow:hover .arrow-label {
+    color: rgb(255, 255, 255);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+  }
+}
+
+/* Sur desktop, le compteur réapparaît dès que le fondu de la carte est terminé. */
+@media (min-width: 768px) {
+  .carousel-container:not(.is-transitioning) .about-dots,
+  .carousel-container:not(.is-transitioning) .article-counter {
+    transition: none;
+  }
+}
+
+/* Timings harmonisés avec les autres héros, sur mobile et desktop. */
+.hero-menu-quiz .texte-hero {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: texte-fade-left 2.8s cubic-bezier(0.19, 1, 0.22, 1) 1.5s forwards !important;
+}
+
+.hero-scroll-down {
+  opacity: 0;
+  animation:
+    fade-in 1.8s ease-out 1.8s forwards,
+    clignoter 5s ease-in-out 3.6s infinite !important;
+}
+
+/* Le texte du héros reste fixe après son apparition ; seules les flèches clignotent. */
+.hero-scroll-down {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.hero-scroll-down p {
+  opacity: 0;
+  animation: fade-in 1.8s ease-out 1.8s forwards !important;
+}
+
+.hero-scroll-down > i {
+  opacity: 0;
+  animation: hero-arrow-blink 10s ease-in-out 3.6s infinite !important;
+  box-shadow: 0 0 5px 1px rgba(255, 68, 0, .38);
+}
+
+@keyframes hero-arrow-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-down,
+  .hero-scroll-down > i {
+    animation: none !important;
+    opacity: 1;
+  }
+  .hero-scroll-down p { animation: none !important; opacity: 1; }
 }

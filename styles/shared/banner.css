@@ -320,3 +320,21 @@
       shared-placeholder-marquee 18s linear infinite;
   }
 }
+
+/* Même message centré et clignotement lent pour tous les bandeaux de remplacement. */
+.site-banner-placeholder.site-banner-placeholder > p,
+.legal-banner-placeholder.legal-banner-placeholder > p {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 1 auto !important;
+  margin: 0 !important;
+  white-space: normal !important;
+  text-align: center !important;
+  transform: none !important;
+  animation: shared-banner-placeholder-blink 8s ease-in-out infinite !important;
+}
+
+@keyframes shared-banner-placeholder-blink {
+  0%, 100% { opacity: .3; }
+  50% { opacity: 1; }
+}

@@ -2460,8 +2460,8 @@
   }
 }
 
-/* Mobile: same visible dot size as Accueil, while keeping the 32px target. */
-@media (max-width: 375.98px) {
+/* Keep the 320px visual dot size across mobile, with the larger tap target. */
+@media (max-width: 767.98px) {
   .about-dots .dot > span {
     width: 8px;
     height: 8px;
@@ -2499,4 +2499,101 @@
 
 @media (max-width: 767.98px) {
   .logo-wrapper { display: none !important; }
+}
+
+@media (max-width: 767.98px) {
+  .hero-menu-quiz h1 { font-size: clamp(58px, 15vw, 110px); }
+}
+
+@media (max-width: 767.98px) {
+  .hero-menu-quiz .texte-hero {
+    font-weight: 400;
+    animation-duration: 2.8s;
+    animation-delay: 1.5s;
+  }
+
+  .hero-scroll-down {
+    bottom: 5.8%;
+    animation:
+      fade-in 1.8s ease-out 1.8s forwards,
+      clignoter 5s ease-in-out 3.6s infinite;
+  }
+}
+
+/* Timings harmonisés avec les autres héros, sur mobile et desktop. */
+.hero-menu-quiz .texte-hero {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: texte-fade-left 2.8s cubic-bezier(0.19, 1, 0.22, 1) 1.5s forwards !important;
+}
+
+.hero-scroll-down {
+  opacity: 0;
+  animation:
+    fade-in 1.8s ease-out 1.8s forwards,
+    clignoter 5s ease-in-out 3.6s infinite !important;
+}
+
+/* Sur mobile, afficher le contenu des cartes sans dépendre d'un survol. */
+@media (max-width: 767.98px) {
+  .carousel-slide .slide-content {
+    opacity: 1 !important;
+  }
+
+  .carousel-slide .slide-content h2 {
+    color: orangered !important;
+    font-size: 25px;
+  }
+
+  .carousel-slide .slide-content p {
+    color: #fff !important;
+    font-size: 14px;
+  }
+}
+
+/* Le texte du héros reste fixe après son apparition ; seules les flèches clignotent. */
+.hero-scroll-down {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+.hero-scroll-down p {
+  opacity: 0;
+  animation: fade-in 1.8s ease-out 1.8s forwards !important;
+}
+
+.hero-scroll-down > i {
+  opacity: 0;
+  animation: hero-arrow-blink 10s ease-in-out 3.6s infinite !important;
+  box-shadow: 0 0 5px 1px rgba(255, 68, 0, .38);
+}
+
+@keyframes hero-arrow-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-down,
+  .hero-scroll-down > i {
+    animation: none !important;
+    opacity: 1;
+  }
+  .hero-scroll-down p { animation: none !important; opacity: 1; }
+}
+
+/* Message centré : le bandeau de remplacement ne défile plus. */
+.placeholder > p {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 1 auto !important;
+  white-space: normal !important;
+  text-align: center !important;
+  transform: none !important;
+  animation: quiz-banner-placeholder-blink 8s ease-in-out infinite !important;
+}
+
+@keyframes quiz-banner-placeholder-blink {
+  0%, 100% { opacity: .3; }
+  50% { opacity: 1; }
 }

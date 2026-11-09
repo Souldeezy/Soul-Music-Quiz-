@@ -20,14 +20,26 @@
 }
 .home-stats-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(0, 0, 0, .58); }
 .home-stats-content { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr); width: min(100%, 1400px); align-items: center; }
-.home-reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 20px; padding: 50px; border: 1px solid orangered; border-radius: 10px; background: #000; box-shadow: 0 0 15px orangered; }
+.home-reviews { position: relative; min-width: 0; padding: 50px 70px; border: 1px solid orangered; border-radius: 10px; background: #000; box-shadow: 0 0 15px orangered; }
 .home-reviews { width: min(100%, 1000px); justify-self: center; }
-.home-review { display: flex; min-width: 0; flex-direction: column; align-items: center; justify-content: space-between; margin: 0; color: orangered; text-align: center; }
+.home-reviews-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; width: 100%; min-width: 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; cursor: grab; }
+.home-reviews-track::-webkit-scrollbar { display: none; }
+.home-reviews-track.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.home-reviews-page { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; min-width: 0; scroll-snap-align: start; }
+.home-reviews-page[aria-hidden="true"] { pointer-events: none; }
+.home-review { display: flex; min-width: 0; min-height: 145px; flex-direction: column; align-items: center; justify-content: space-between; margin: 0; color: orangered; text-align: center; }
 .home-review blockquote { min-height: 100px; margin: 0; color: orangered; font-size: 18px; font-style: italic; font-weight: 700; line-height: 1.45; }
 .home-review figcaption { margin-top: 10px; font-size: 21px; font-weight: 400; }
-.home-stars { margin-top: 10px; color: orangered; white-space: nowrap; }
 .home-review blockquote { text-wrap: pretty; overflow-wrap: break-word; }
 .home-review figcaption { overflow-wrap: break-word; color: #fff; }
+.home-reviews-arrow { position: absolute; top: 50%; z-index: 1; display: grid; width: 48px; height: 48px; padding: 0; place-items: center; border: 0; color: #fff; background: transparent; font: inherit; font-size: 54px; line-height: 1; cursor: pointer; transform: translateY(-50%); }
+.home-reviews-arrow.prev { left: 12px; }
+.home-reviews-arrow.next { right: 12px; }
+.home-reviews-arrow:focus-visible { outline: 2px solid rgb(0, 249, 166); outline-offset: 2px; border-radius: 50%; }
+
+@media (min-width: 768px) and (hover: hover) {
+  .home-reviews-arrow:hover { color: orangered; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .home-stats-image { transition: none; }
@@ -43,7 +55,7 @@
 @media (min-width: 768px) and (max-width: 1439.98px) {
   .home-stats { padding: clamp(70px, 8vw, 100px) clamp(40px, 6vw, 72px); }
   .home-stats-content { grid-template-columns: 1fr; }
-  .home-reviews { padding: clamp(28px, 4vw, 45px); }
+  .home-reviews { padding: clamp(28px, 4vw, 45px) 62px; }
   .home-review blockquote { min-height: 80px; font-size: clamp(16px, 1.7vw, 18px); }
   .home-review figcaption { font-size: clamp(17px, 1.8vw, 20px); }
 }
@@ -51,9 +63,17 @@
 @media (max-width: 767.98px) {
   .home-stats { padding: 65px clamp(16px, 5vw, 32px); }
   .home-stats-content { grid-template-columns: 1fr; }
-  .home-reviews { grid-template-columns: 1fr; gap: 32px; padding: 30px 20px; }
+  .home-reviews { padding: 66px 20px; }
+  .home-reviews-page { grid-template-columns: 1fr; gap: 20px; overflow: hidden; }
+  .home-review { min-height: 105px; justify-content: center; gap: 8px; }
   .home-review blockquote { min-height: auto; font-size: clamp(16px, 4.5vw, 18px); }
-  .home-review figcaption { font-size: clamp(17px, 5vw, 20px); }
+  .home-review figcaption { margin-top: 0; font-size: clamp(17px, 5vw, 20px); }
+  .home-reviews-arrow { top: auto; left: 50%; width: 48px; height: 44px; color: orangered; font-size: 42px; transform: translateX(-50%); -webkit-tap-highlight-color: transparent; user-select: none; }
+  .home-reviews-arrow:focus { outline: none; box-shadow: none; }
+  .home-reviews-arrow.prev { top: 11px; left: 50%; }
+  .home-reviews-arrow.next { right: auto; bottom: 11px; }
+  .home-reviews-arrow span { display: block; }
+  .home-reviews-arrow.prev span { transform: translateY(-15px); }
 }
 
 @media (max-width: 375.98px) {
@@ -80,7 +100,9 @@
 @media (min-width: 1880px) and (max-width: 1960px) {
   .home-stats { min-height: 660px; padding: 130px 80px; }
   .home-stats-content { grid-template-columns: 1fr; }
-  .home-reviews { gap: 28px; padding: 64px; }
+  .home-reviews { padding: 64px 86px; }
+  .home-reviews-page { gap: 28px; }
+  .home-review { min-height: 225px; }
   .home-review blockquote { min-height: 160px; font-size: 32px; line-height: 1.5; }
   .home-review figcaption { margin-top: 18px; font-size: 30px; }
   .home-reviews { width: min(100%, 1400px); }
@@ -89,11 +111,12 @@
 @media (min-width: 2500px) and (max-width: 2600px) {
   .home-stats { min-height: 800px; padding: 160px 100px; }
   .home-stats-content { width: min(100%, 2300px); grid-template-columns: 1fr; gap: 70px; }
-  .home-reviews { gap: 34px; padding: 80px; }
+  .home-reviews { padding: 80px 105px; }
+  .home-reviews-page { gap: 34px; }
+  .home-review { min-height: 270px; }
   .home-review blockquote { min-height: 190px; font-size: 38px; }
   .home-review figcaption { font-size: 36px; }
   .home-reviews { width: 100%; justify-self: center; }
-  .home-stars { font-size: 38px; letter-spacing: 10px; }
   .home-review figcaption { margin-bottom: 24px; }
 }
 
@@ -109,9 +132,12 @@
 
   .home-reviews {
     width: 100%;
-    gap: 20px;
-    padding: 20px 14px;
+    padding: 57px 14px;
   }
+
+  .home-reviews-page { gap: 20px; }
+
+  .home-review { min-height: 82px; }
 
   .home-review blockquote {
     min-height: 0;
@@ -120,13 +146,8 @@
   }
 
   .home-review figcaption {
-    margin-top: 6px;
+    margin-top: 0;
     font-size: 13px;
-  }
-
-  .home-stars {
-    margin-top: 6px;
-    font-size: 12px;
   }
 
 }

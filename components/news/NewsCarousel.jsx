@@ -353,14 +353,16 @@ export default function NewsCarousel() {
     const fadeDuration = 300;
     transitionRef.current = true;
     setIsCarouselTransitioning(true);
-    setActiveIndex(nextIndex);
     track.classList.add(styles["is-fading"]);
     timersRef.current.push(window.setTimeout(() => {
       track.scrollTo({ left: nextIndex * track.clientWidth, behavior: "instant" });
       timersRef.current.push(window.setTimeout(() => {
         track.classList.remove(styles["is-fading"]);
-        setIsCarouselTransitioning(false);
-        transitionRef.current = false;
+        timersRef.current.push(window.setTimeout(() => {
+          setActiveIndex(nextIndex);
+          setIsCarouselTransitioning(false);
+          transitionRef.current = false;
+        }, fadeDuration));
       }, 40));
     }, fadeDuration));
   };

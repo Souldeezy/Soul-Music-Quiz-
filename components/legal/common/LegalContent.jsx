@@ -97,6 +97,11 @@ export default function LegalContent() {
         du site. Ces données ne sont pas transmises à Soul Music Quiz.
         <br />
         <br />
+        Le site utilise Vercel Web Analytics pour mesurer sa fréquentation et
+        connaître les pages consultées. Selon Vercel, les statistiques sont
+        agrégées et cet outil ne dépose pas de cookies.
+        <br />
+        <br />
         Si vous contactez l’éditeur par email, votre adresse et le contenu de
         votre message sont utilisés uniquement pour répondre à votre demande.
         Aucune donnée personnelle n’est vendue ni cédée à des tiers à des fins
@@ -131,9 +136,9 @@ export default function LegalContent() {
       <h2>Cookies</h2>
 
       <p className="legal-content-paragraph" id="SMQ-cookies">
-        Soul Music Quiz n’utilise pas, à ce jour, de cookies publicitaires ni
-        d’outil de mesure d’audience. Certaines fonctionnalités enregistrent
-        des informations dans le stockage local ou de session du navigateur,
+        Soul Music Quiz n’utilise pas de cookies publicitaires. La mesure
+        d’audience assurée par Vercel Web Analytics ne dépose pas de cookies.
+        Certaines fonctionnalités enregistrent des informations dans le stockage local ou de session du navigateur,
         par exemple les résultats d’un quiz ou la position de navigation. Ces
         informations restent sur votre appareil et peuvent être supprimées
         depuis les réglages de votre navigateur.

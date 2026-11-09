@@ -1,6 +1,7 @@
 /* IMPORTS ........................................................................................................... */
 
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Alfa_Slab_One, Meow_Script, Rock_Salt } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -52,6 +53,7 @@ export default function RootLayout({
         />
 
         {children}
+        <Analytics />
       </body>
     </html>
   );
